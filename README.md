@@ -64,16 +64,16 @@ Visual Studio Community 2019 or better to build.
    </tr>
    <tr>
       <td>Dark</td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/blob/master/source/VS2022-Dark.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/VS2022-Dark.png" width="400"></td>
    </tr>
    <tr>
       <td>Light</td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/blob/master/source/VS2022-Light.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/VS2022-Light.png" width="400"></td>
 
    </tr>
    <tr>
       <td>Blue</td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/blob/master/source/VS2022-Blue.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/VS2022-Blue.png" width="400"></td>
    </tr>
 
 </table>
@@ -85,13 +85,19 @@ Just load *Light* or *Dark* brush resources in you resource dictionary to take a
 
 ```XAML
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AvalonDock.Themes.VS2013;component/DarkBrushs.xaml" />
+        <ResourceDictionary Source="/AvalonDock.Themes.VS2022;component/DarkBrushs.xaml" />
     </ResourceDictionary.MergedDictionaries>
 ```
 
 ```XAML
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/AvalonDock.Themes.VS2013;component/LightBrushs.xaml" />
+        <ResourceDictionary Source="/AvalonDock.Themes.VS2022;component/LightBrushs.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+```
+
+```XAML
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/AvalonDock.Themes.VS2022;component/BlueBrushs.xaml" />
     </ResourceDictionary.MergedDictionaries>
 ```
 
