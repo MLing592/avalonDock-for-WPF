@@ -55,6 +55,8 @@ Visual Studio Community 2019 or better to build.
 
 # Feature Added - 基于Dirkster.AvalonDock的VS2013主题修改而来的VS2022主题
 
+如图所示案例为/Test Projects/VS2022Test，全图为VS2022，红框内为Test程序，进行对比。
+
 <table width="100%">
    <tr>
       <td>theme</td>
@@ -62,16 +64,16 @@ Visual Studio Community 2019 or better to build.
    </tr>
    <tr>
       <td>Dark</td>
-      <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Dark/DockDocument.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/blob/master/source/VS2022-Dark.png" width="400"></td>
    </tr>
    <tr>
       <td>Light</td>
-      <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Dark/DockDocument_1.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/blob/master/source/VS2022-Light.png" width="400"></td>
 
    </tr>
    <tr>
       <td>Blue</td>
-      <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Dark/DockToolWindow.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/blob/master/source/VS2022-Blue.png" width="400"></td>
    </tr>
 
 </table>
