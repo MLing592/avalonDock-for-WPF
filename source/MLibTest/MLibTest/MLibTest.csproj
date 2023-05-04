@@ -1,0 +1,95 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>netcoreapp3.0;net5.0-windows;net48</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net5.0-windows|AnyCPU'">
+    <DefineConstants />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Demos\Images\document.png" />
+    <None Remove="Demos\Images\property-blue.png" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0-windows'">
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
+      <Version>1.1.19</Version>
+    </PackageReference>
+  </ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
+			<Version>1.1.19</Version>
+		</PackageReference>
+	</ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dirkster.ColorPickerLib" Version="1.6.0" />
+    <PackageReference Include="Dirkster.MLib" Version="1.3.1.2" />
+    <PackageReference Include="Dirkster.MWindowLib" Version="1.3.1.2" />
+    <PackageReference Include="Dirkster.NumericUpDownLib" Version="2.4.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Components\AvalonDock.Themes.Expression\AvalonDock.Themes.Expression.csproj" />
+    <ProjectReference Include="..\..\Components\AvalonDock.Themes.Metro\AvalonDock.Themes.Metro.csproj" />
+    <ProjectReference Include="..\..\Components\AvalonDock.Themes.VS2013\AvalonDock.Themes.VS2013.csproj" />
+    <ProjectReference Include="..\..\Components\AvalonDock\AvalonDock.csproj" />
+    <ProjectReference Include="..\..\MLibTest\MLibTest_Components\ServiceLocator\ServiceLocator.csproj" />
+    <ProjectReference Include="..\..\MLibTest\MLibTest_Components\Settings\SettingsModel\SettingsModel.csproj" />
+    <ProjectReference Include="..\..\MLibTest\MLibTest_Components\Settings\Settings\Settings.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Demos\Images\document.png" />
+    <Resource Include="Demos\Images\property-blue.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="App.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Demos\ViewModels\Views\ColorSelectionView.xaml.cs">
+      <DependentUpon>ColorSelectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="BindToMLib\AvalonDock_Dark_LightBrushs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="BindToMLib\ColorPickerLib_DarkLightBrushs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="BindToMLib\MWindowLib_DarkLightBrushs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="BindToMLib\NumericUpDownLib_DarkLightBrushs.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Demos\ViewModels\Views\ColorSelectionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+</Project>

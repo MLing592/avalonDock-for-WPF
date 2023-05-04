@@ -1,0 +1,2 @@
+1.在Generic.xaml的ItemContainerStyle下添加了左侧矩形条
+2.在DarkBrushs.xaml和ResourceKeys添加了DocumentWellTabUnselectedRectangleBackground
