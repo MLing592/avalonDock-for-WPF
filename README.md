@@ -53,45 +53,27 @@ Be sure to checkout the <a href="https://github.com/Dirkster99/AvalonDock/wiki">
 This project supports multitargeting frameworks (NetCore 3 and .Net 4). This means that it requires
 Visual Studio Community 2019 or better to build.
 
-# Feature Added - Dark and Light VS 2013 Theme
-
-Please review the <a href="https://github.com/Dirkster99/AvalonDock/wiki">Project Wiki</a> to see more demo screenshots.
-All screenshots below are from the <a href="https://github.com/Dirkster99/MLib">MLib</a> based VS 2013 Dark (Accent Color Gold)/Light (Accent Color Blue) theme on Windows 10. Similar theming results should be possible with other theming libraries since the implementation follow these <a href="https://www.codeproject.com/Articles/1236588/File-System-Controls-in-WPF-Version-III">guidelines</a>.
-
-The Docking Buttons are [defined in XAML](https://github.com/Dirkster99/AvalonDock/wiki/OverlayWindow), which ensures a good looking image on all resolutions, even 4K or 8K, and enables us to color theme consistently with the Window 10 <b>Accent Color</b>.
+# Feature Added - 基于Dirkster.AvalonDock的VS2013主题修改而来的VS2022主题
 
 <table width="100%">
    <tr>
-      <td>Description</td>
+      <td>theme</td>
+      <td>display</td>
+   </tr>
+   <tr>
       <td>Dark</td>
-      <td>Light</td>
-   </tr>
-   <tr>
-      <td>Dock Document</td>
       <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Dark/DockDocument.png" width="400"></td>
-      <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Light/DockDocument.png" width="400"></td>
    </tr>
    <tr>
-      <td>Dock Document</td>
+      <td>Light</td>
       <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Dark/DockDocument_1.png" width="400"></td>
-      <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Light/DockDocument_1.png" width="400"></td>
 
    </tr>
    <tr>
-      <td>Dock Tool Window</td>
+      <td>Blue</td>
       <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Dark/DockToolWindow.png" width="400"></td>
-      <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Light/DockToolWindow.png" width="400"></td>
    </tr>
-   <tr>
-      <td>Document</td>
-      <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Dark/Document.png" width="400"></td>
-      <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Light/Document.png" width="400"></td>
-   </tr>
-   <tr>
-      <td>Tool Window</td>
-      <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Dark/ToolWindow.png" width="400"></td>
-      <td><img src="https://raw.githubusercontent.com/Dirkster99/Docu/master/AvalonDock/VS2013/AD_MLib/Light/ToolWindow.png" width="400"></td>
-   </tr>
+
 </table>
 
 ## Theming
