@@ -4,11 +4,7 @@
     xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
     xmlns:reskeys="clr-namespace:AvalonDock.Themes.VS2022.Themes">
 
-    <!--#region 可选文档背景色-->
-    <SolidColorBrush
-        x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackgroundSelected}"
-        options:Freeze="true"
-        Color="#2E2E2E" />
+    <!--#region DocumentTabColor 可选文档背景色-->
 
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground2E2E2E}"
@@ -69,15 +65,26 @@
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground946A5B}"
         options:Freeze="true"
-        Color="#6BC7A4" />
+        Color="#946A5B" />
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground6B8EC7}"
         options:Freeze="true"
-        Color="#946A5B" />
+        Color="#6B8EC7" />
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackgroundE0A2A4}"
         options:Freeze="true"
         Color="#E0A2A4" />
+    <!--#endregion-->
+
+    <!--#region DocumentContextMenu Background Foreground 选项卡菜单背景色前景色-->
+    <SolidColorBrush
+        x:Key="{x:Static reskeys:ResourceKeys.DocumentContextMenuBackground}"
+        options:Freeze="true"
+        Color="#E9EEFF" />
+    <SolidColorBrush
+        x:Key="{x:Static reskeys:ResourceKeys.DocumentContextMenuForeground}"
+        options:Freeze="true"
+        Color="#1E1E1E" />
     <!--#endregion-->
 
     <!--  Accent Keys  -->
@@ -167,23 +174,23 @@
     <!--  Document Well : Tab  -->
     <!--  Selected Document Highlight Header Top color (AccentColor)  -->
 
-	<!--  文档选项卡未选中鼠标放到选项卡时除左侧矩形条外背景色  -->
-	<SolidColorBrush
+    <!--  文档选项卡未选中鼠标放到选项卡时除左侧矩形条外背景色  -->
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedHoveredBackgroundColor}"
         options:Freeze="true"
         Color="#bbc6f1" />
-	<!--  文档左方矩形条颜色，使用，改变选项卡颜色时需要改变这个颜色  -->
-	<SolidColorBrush
+    <!--  文档左方矩形条颜色，使用，改变选项卡颜色时需要改变这个颜色  -->
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedRectangleBackground}"
         options:Freeze="true"
         Color="#F5CC84" />
-	<!--  选中时背景色，使用，改变选项卡颜色时需要改变这个颜色  -->
-	<SolidColorBrush
+    <!--  选中时背景色，使用，改变选项卡颜色时需要改变这个颜色  -->
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveBackground}"
         options:Freeze="true"
         Color="#f5cc84" />
-	<!--  选中时文字颜色，使用  -->
-	<SolidColorBrush
+    <!--  选中时文字颜色，使用  -->
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveText}"
         options:Freeze="true"
         Color="#000000" />
@@ -214,8 +221,8 @@
         Color="#000000" />
 
     <!--  Document Well : Tab : Button  -->
-	<!--  文档窗口 按钮颜色  -->
-	<SolidColorBrush
+    <!--  文档窗口 按钮颜色  -->
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonSelectedActiveGlyph}"
         options:Freeze="true"
         Color="#000000" />
@@ -336,9 +343,9 @@
         options:Freeze="true"
         Color="#FFFFFF" />
 
-	<!--  Tool Window : Caption : Button  -->
-	<!--  工具窗口 按钮颜色  -->
-	<SolidColorBrush
+    <!--  Tool Window : Caption : Button  -->
+    <!--  工具窗口 按钮颜色  -->
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.ToolWindowCaptionButtonActiveGlyph}"
         options:Freeze="true"
         Color="#000000" />

@@ -80,7 +80,9 @@ to also theme standard elements, such as, button and textblock etc.
 
 - 1.修改AvalonDock/Controls/DocumentPaneTabPanel.cs，原版容器为Panel，由一行显示文档，多余隐藏，现在使用WrapPanel作为面板容器
 - 2.新增AvalonDock/Controls/LayoutDocumentItem.cs，增加ChangeTabColorCommand命令对应方法，寻找资源并统一替换颜色，实现统一更换选项卡颜色
-- 3.新增右键LayoutDocument时，LayoutDocument被选中
+- 3.重写了AvalonDock/Controls/LayoutDocumentTabItem.cs下OnMouseRightButtonDown方法，使右键LayoutDocument时，LayoutDocument即被选中
+- 4.删除部分无用颜色资源和键
+- 5.鼠标移动到选项卡上时，选项卡成为孤岛，左右上下皆隔开，选项卡不再直角，改为圆角
 
 
 

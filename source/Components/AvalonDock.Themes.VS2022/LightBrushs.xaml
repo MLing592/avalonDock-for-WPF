@@ -7,12 +7,7 @@
         <ResourceDictionary Source="/AvalonDock.Themes.VS2022;component/Themes/Menu/LightBrushs.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!--#region Tab Change Color Options-->
-    <!--#region 可选文档背景色-->
-    <SolidColorBrush
-        x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackgroundSelected}"
-        options:Freeze="true"
-        Color="#2E2E2E" />
+    <!--#region DocumentTabColor 可选文档背景色-->
 
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground2E2E2E}"
@@ -73,15 +68,26 @@
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground946A5B}"
         options:Freeze="true"
-        Color="#6BC7A4" />
+        Color="#946A5B" />
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground6B8EC7}"
         options:Freeze="true"
-        Color="#946A5B" />
+        Color="#6B8EC7" />
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackgroundE0A2A4}"
         options:Freeze="true"
         Color="#E0A2A4" />
+    <!--#endregion-->
+
+    <!--#region DocumentContextMenu Background Foreground 选项卡菜单背景色前景色-->
+    <SolidColorBrush
+        x:Key="{x:Static reskeys:ResourceKeys.DocumentContextMenuBackground}"
+        options:Freeze="true"
+        Color="#F6F6F6" />
+    <SolidColorBrush
+        x:Key="{x:Static reskeys:ResourceKeys.DocumentContextMenuForeground}"
+        options:Freeze="true"
+        Color="#1E1E1E" />
     <!--#endregion-->
 
     <!--  Accent Keys  -->

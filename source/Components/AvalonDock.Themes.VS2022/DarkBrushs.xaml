@@ -7,15 +7,10 @@
         <ResourceDictionary Source="/AvalonDock.Themes.VS2022;component/Themes/Menu/DarkBrushs.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
-    <!--#region Tab Change Color Options-->
-	
-    <!--#region 可选文档背景色，默认-->
-    <SolidColorBrush
-        x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackgroundSelected}"
-        options:Freeze="true"
-        Color="#2E2E2E" />
 
-    <SolidColorBrush
+	<!--#region DocumentTabColor 可选文档背景色-->
+
+	<SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground2E2E2E}"
         options:Freeze="true"
         Color="#2E2E2E" />
@@ -84,9 +79,19 @@
         options:Freeze="true"
         Color="#E0A2A4" />
     <!--#endregion-->
+	
+	<!--#region DocumentContextMenu Background Foreground 选项卡菜单背景色前景色-->
+	<SolidColorBrush
+        x:Key="{x:Static reskeys:ResourceKeys.DocumentContextMenuBackground}"
+        options:Freeze="true"
+        Color="#2E2E2E" />
+	<SolidColorBrush
+        x:Key="{x:Static reskeys:ResourceKeys.DocumentContextMenuForeground}"
+        options:Freeze="true"
+        Color="#D6D6D6" />
+	<!--#endregion-->
 
-
-    <!--  Accent Keys  -->
+	<!--  Accent Keys  -->
     <Color x:Key="{x:Static reskeys:ResourceKeys.ControlAccentColorKey}">#FF007ACC</Color>
 
     <SolidColorBrush

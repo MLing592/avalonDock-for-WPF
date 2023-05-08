@@ -342,14 +342,18 @@
                                         Width="4"
                                         Margin="0,0,0,0"
                                         Background="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedRectangleBackground}}"
+                                        CornerRadius="2,0,0,2"
                                         Visibility="Visible" />
                                     <!--#endregion-->
+                                    <!--#region 背景-->
                                     <Border
                                         x:Name="Bd"
                                         Grid.Column="1"
                                         Background="{TemplateBinding Background}"
                                         BorderBrush="{Binding Background, RelativeSource={RelativeSource Self}}"
-                                        BorderThickness="0,0,0,0" />
+                                        BorderThickness="0,0,0,0"
+                                        CornerRadius="0,2,2,0" />
+                                    <!--#endregion-->
                                     <ContentPresenter
                                         x:Name="Content"
                                         Grid.Column="1"
@@ -380,6 +384,7 @@
                                             <Condition Binding="{Binding IsSelected}" Value="True" />
                                         </MultiDataTrigger.Conditions>
                                         <Setter Property="Foreground" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabSelectedInactiveText}}" />
+                                        <Setter TargetName="Bd" Property="Margin" Value="0,0,0,0" />
                                     </MultiDataTrigger>
 
                                     <!--  Document Well : Tab / Unselected 未选中，透明  -->
@@ -401,6 +406,7 @@
                                         </MultiTrigger.Conditions>
                                         <!--  Dark下不需要，Light下需要改变背景色突出文字颜色,设置选项卡颜色Dark下不用修改  -->
                                         <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedHoveredBackgroundColor}}" />
+                                        <Setter TargetName="Bd" Property="Margin" Value="1" />
                                         <Setter Property="Foreground" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedHoveredText}}" />
                                         <Setter Property="Panel.ZIndex" Value="0" />
                                     </MultiTrigger>
@@ -1378,11 +1384,13 @@
             Header="{x:Static avalonDockProperties:Resources.Document_MoveToPreviousTabGroup}"
             Visibility="{Binding Path=IsEnabled, RelativeSource={RelativeSource Self}, Mode=OneWay, Converter={avalonDockConverters:BoolToVisibilityConverter}}" />
         <!--#region Add ChangeTabColor 改变文档背景色命令按钮-->
-        <MenuItem Header="{x:Static avalonDockProperties:Resources.Document_ChangeColor}">
+        <MenuItem Header="{x:Static avalonDockProperties:Resources.Document_ChangeColor}"
+				  Background="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentContextMenuBackground}}"
+				  Foreground="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentContextMenuForeground}}">
             <MenuItem.ItemContainerStyle>
-                <Style TargetType="MenuItem">
-                    <Setter Property="Foreground" Value="#D6D6D6" />
-                </Style>
+				<Style TargetType="MenuItem">
+					<!--<Setter Property="Foreground" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentContextMenuForeground}}" />-->
+				</Style>
             </MenuItem.ItemContainerStyle>
             <MenuItem
                 Command="{Binding Path=ChangeTabColorCommand}"

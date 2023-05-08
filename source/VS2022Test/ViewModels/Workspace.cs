@@ -182,9 +182,6 @@ namespace AvalonDock.VS2022Test.ViewModels
 			new Tuple<string, Theme>(nameof(VS2022DarkTheme),new VS2022DarkTheme()),
 			new Tuple<string, Theme>(nameof(VS2022LightTheme),new VS2022LightTheme()),
 			new Tuple<string, Theme>(nameof(VS2022BlueTheme),new VS2022BlueTheme()),
-			new Tuple<string, Theme>(nameof(VS2022DarkTheme_Blue_6B8EC7),new VS2022DarkTheme_Blue_6B8EC7()),
-			new Tuple<string, Theme>(nameof(VS2022LightTheme_Blue_6B8EC7),new VS2022LightTheme_Blue_6B8EC7()),
-			new Tuple<string, Theme>(nameof(VS2022BlueTheme_Blue_6B8EC7),new VS2022BlueTheme_Blue_6B8EC7()),
 		};
 
 		public Tuple<string, Theme> SelectedTheme

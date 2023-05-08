@@ -1,4 +1,4 @@
-﻿/************************************************************************
+/************************************************************************
    AvalonDock
 
    Copyright (C) 2007-2013 Xceed Software Inc.
@@ -130,6 +130,7 @@ namespace AvalonDock.Controls
 		}
 
 		#endregion Overrides
+
 
 		#region Private Methods
 

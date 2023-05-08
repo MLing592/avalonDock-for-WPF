@@ -118,6 +118,14 @@ namespace AvalonDock.Controls
 			_isMouseDown = true;
 		}
 
+		//重写方法，使其右键选中
+		protected override void OnMouseRightButtonDown(System.Windows.Input.MouseButtonEventArgs e)
+		{
+			base.OnMouseRightButtonDown(e);
+			if (  Model != null)
+				Model.IsSelected = true;
+		}
+
 		/// <inheritdoc />
 		protected override void OnMouseMove(MouseEventArgs e)
 		{
