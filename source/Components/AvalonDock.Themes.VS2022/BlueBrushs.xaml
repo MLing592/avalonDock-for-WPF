@@ -167,23 +167,23 @@
     <!--  Document Well : Tab  -->
     <!--  Selected Document Highlight Header Top color (AccentColor)  -->
 
-    <!--  文档除左侧矩形条外背景色  -->
-    <SolidColorBrush
+	<!--  文档选项卡未选中鼠标放到选项卡时除左侧矩形条外背景色  -->
+	<SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedHoveredBackgroundColor}"
         options:Freeze="true"
         Color="#bbc6f1" />
-	<!--  文档左方矩形条颜色  -->
+	<!--  文档左方矩形条颜色，使用，改变选项卡颜色时需要改变这个颜色  -->
 	<SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedRectangleBackground}"
         options:Freeze="true"
         Color="#F5CC84" />
-
-    <SolidColorBrush
+	<!--  选中时背景色，使用，改变选项卡颜色时需要改变这个颜色  -->
+	<SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveBackground}"
         options:Freeze="true"
         Color="#f5cc84" />
-
-    <SolidColorBrush
+	<!--  选中时文字颜色，使用  -->
+	<SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveText}"
         options:Freeze="true"
         Color="#000000" />
@@ -214,10 +214,11 @@
         Color="#000000" />
 
     <!--  Document Well : Tab : Button  -->
-    <SolidColorBrush
+	<!--  文档窗口 按钮颜色  -->
+	<SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonSelectedActiveGlyph}"
         options:Freeze="true"
-        Color="#75633D" />
+        Color="#000000" />
 
     <!--  AccentColor  -->
     <SolidColorBrush
@@ -278,7 +279,7 @@
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonUnselectedTabHoveredGlyph}"
         options:Freeze="true"
-        Color="#CED4DD" />
+        Color="#000000" />
     <!--  AccentColor  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonUnselectedTabHoveredButtonHoveredBackground}"
@@ -335,11 +336,12 @@
         options:Freeze="true"
         Color="#FFFFFF" />
 
-    <!--  Tool Window : Caption : Button  -->
-    <SolidColorBrush
+	<!--  Tool Window : Caption : Button  -->
+	<!--  工具窗口 按钮颜色  -->
+	<SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.ToolWindowCaptionButtonActiveGlyph}"
         options:Freeze="true"
-        Color="#75633D" />
+        Color="#000000" />
     <!--  AccentColor  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.ToolWindowCaptionButtonActiveHoveredBackground}"

@@ -1,4 +1,4 @@
-﻿/************************************************************************
+/************************************************************************
    AvalonDock
 
    Copyright (C) 2007-2013 Xceed Software Inc.
@@ -9,6 +9,7 @@
 
 using System;
 using System.Windows;
+using System.Windows.Media;
 
 namespace AvalonDock.Themes
 {
@@ -23,5 +24,6 @@ namespace AvalonDock.Themes
 		/// <summary>Gets the <see cref="Uri"/> of the XAML that contains the definition for this AvalonDock theme.</summary>
 		/// <returns><see cref="Uri"/> of the XAML that contains the definition for this custom AvalonDock theme</returns>
 		public abstract Uri GetResourceUri();
+
 	}
 }

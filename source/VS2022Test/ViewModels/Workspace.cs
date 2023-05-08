@@ -181,7 +181,10 @@ namespace AvalonDock.VS2022Test.ViewModels
 		{
 			new Tuple<string, Theme>(nameof(VS2022DarkTheme),new VS2022DarkTheme()),
 			new Tuple<string, Theme>(nameof(VS2022LightTheme),new VS2022LightTheme()),
-			new Tuple<string, Theme>(nameof(VS2022BlueTheme),new VS2022BlueTheme())
+			new Tuple<string, Theme>(nameof(VS2022BlueTheme),new VS2022BlueTheme()),
+			new Tuple<string, Theme>(nameof(VS2022DarkTheme_Blue_6B8EC7),new VS2022DarkTheme_Blue_6B8EC7()),
+			new Tuple<string, Theme>(nameof(VS2022LightTheme_Blue_6B8EC7),new VS2022LightTheme_Blue_6B8EC7()),
+			new Tuple<string, Theme>(nameof(VS2022BlueTheme_Blue_6B8EC7),new VS2022BlueTheme_Blue_6B8EC7()),
 		};
 
 		public Tuple<string, Theme> SelectedTheme
@@ -203,15 +206,15 @@ namespace AvalonDock.VS2022Test.ViewModels
 		{
 			switch (_selectedTheme.Item1)
 			{
-				case "VS2022DarkTheme":
+				case string name when name.Contains("Dark"):
 					Application.Current.Resources.MergedDictionaries[0].Source = new Uri("pack://application:,,,/MLib;component/Themes/DarkTheme.xaml");
 					Application.Current.Resources.MergedDictionaries[1].Source = new Uri("pack://application:,,,/VS2022Test;component/Themes/DarkBrushsExtended.xaml");
 					break;
-				case "VS2022LightTheme":
+				case string name when name.Contains("Light"):
 					Application.Current.Resources.MergedDictionaries[0].Source = new Uri("pack://application:,,,/MLib;component/Themes/LightTheme.xaml");
 					Application.Current.Resources.MergedDictionaries[1].Source = new Uri("pack://application:,,,/VS2022Test;component/Themes/LightBrushsExtended.xaml");
 					break;
-				case "VS2022BlueTheme":
+				case string name when name.Contains("Blue"):
 					//TODO: Create new color resources for blue theme
 					Application.Current.Resources.MergedDictionaries[0].Source = new Uri("pack://application:,,,/MLib;component/Themes/LightTheme.xaml");
 					Application.Current.Resources.MergedDictionaries[1].Source = new Uri("pack://application:,,,/VS2022Test;component/Themes/BlueBrushsExtended.xaml");

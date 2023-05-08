@@ -1053,6 +1053,7 @@ namespace AvalonDock
 		private static void OnThemeChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) => ((DockingManager)d).OnThemeChanged(e);
 
 		/// <summary>Provides derived classes an opportunity to handle changes to the <see cref="Theme"/> property.</summary>
+		/// 切换主题
 		protected virtual void OnThemeChanged(DependencyPropertyChangedEventArgs e)
 		{
 			var oldTheme = e.OldValue as Theme;

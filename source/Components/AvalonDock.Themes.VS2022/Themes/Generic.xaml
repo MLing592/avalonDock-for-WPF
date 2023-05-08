@@ -192,6 +192,7 @@
         </Setter>
     </Style>
 
+
     <!--  作为DocuentTabItem的父控件  -->
     <!--  DocumentPaneControlStyle  -->
     <Style x:Key="AvalonDockThemeVS2022DocumentPaneControlStyle" TargetType="{x:Type avalonDockControls:LayoutDocumentPaneControl}">
@@ -219,11 +220,13 @@
                                 <ColumnDefinition />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
+                            <!--  文档标签选项卡最下方彩色矩形条  -->
                             <Border
                                 x:Name="BD"
                                 Grid.ColumnSpan="2"
                                 BorderBrush="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveBackground}}"
                                 BorderThickness="0,0,0,2" />
+                            <!--  文档选项卡容器  -->
                             <avalonDockControls:DocumentPaneTabPanel
                                 x:Name="HeaderPanel"
                                 Grid.Row="0"
@@ -231,6 +234,7 @@
                                 Margin="0"
                                 IsItemsHost="true"
                                 KeyboardNavigation.TabIndex="1" />
+
                             <avalonDockControls:DropDownButton
                                 x:Name="MenuDropDownButton"
                                 Grid.Column="1"
@@ -243,6 +247,7 @@
                                 <avalonDockControls:DropDownButton.DropDownContextMenu>
                                     <avalonDockControls:ContextMenuEx ItemsSource="{Binding Model.ChildrenSorted, RelativeSource={RelativeSource TemplatedParent}}" />
                                 </avalonDockControls:DropDownButton.DropDownContextMenu>
+                                <!--  最右侧下拉菜单，选择layoutdoucument  -->
                                 <Path
                                     x:Name="MenuDropDownButtonImage"
                                     Height="8"
@@ -318,24 +323,24 @@
                     <Setter Property="Foreground" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedText}}" />
                     <Setter Property="BorderBrush" Value="Transparent" />
                     <Setter Property="ToolTip" Value="{Binding ToolTip}" />
-                    <Setter Property="Height" Value="20" />
-                    <Setter Property="Padding" Value="6,1" />
+                    <Setter Property="Height" Value="25" />
+                    <Setter Property="Padding" Value="6,0" />
                     <Setter Property="Margin" Value="0" />
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type TabItem}">
-                                <Grid Margin="0,0,2,0" SnapsToDevicePixels="true">
+                                <Grid Margin="0,0,5,2" SnapsToDevicePixels="true">
                                     <!--  Document标签页内容  -->
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="auto" />
                                         <ColumnDefinition Width="*" />
-                                        <ColumnDefinition Width="auto" />
                                     </Grid.ColumnDefinitions>
                                     <!--#region 左侧矩形条-->
                                     <Border
                                         x:Name="LeftRectangle"
                                         Grid.Column="0"
                                         Width="4"
+                                        Margin="0,0,0,0"
                                         Background="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedRectangleBackground}}"
                                         Visibility="Visible" />
                                     <!--#endregion-->
@@ -344,7 +349,7 @@
                                         Grid.Column="1"
                                         Background="{TemplateBinding Background}"
                                         BorderBrush="{Binding Background, RelativeSource={RelativeSource Self}}"
-                                        BorderThickness="0,0,0,2" />
+                                        BorderThickness="0,0,0,0" />
                                     <ContentPresenter
                                         x:Name="Content"
                                         Grid.Column="1"
@@ -359,7 +364,7 @@
                                         <Setter Property="Panel.ZIndex" Value="1" />
                                     </Trigger>
 
-                                    <!--  Document Well : Tab / Selected, active选中且激活，蓝，黑  -->
+                                    <!--  Document Well : Tab / Selected, active选中且激活，Dark下蓝，黑，需要改蓝  -->
                                     <DataTrigger Binding="{Binding IsActive}" Value="True">
                                         <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveBackground}}" />
                                         <Setter Property="Foreground" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveText}}" />
@@ -370,11 +375,11 @@
 
                                     <!--  Document Well : Tab / Selected, inactive 选中但未激活，白  -->
                                     <MultiDataTrigger>
-										<MultiDataTrigger.Conditions>
-											<Condition Binding="{Binding IsActive}" Value="False" />
-											<Condition Binding="{Binding IsSelected}" Value="True" />
-										</MultiDataTrigger.Conditions>
-										<Setter Property="Foreground" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabSelectedInactiveText}}" />
+                                        <MultiDataTrigger.Conditions>
+                                            <Condition Binding="{Binding IsActive}" Value="False" />
+                                            <Condition Binding="{Binding IsSelected}" Value="True" />
+                                        </MultiDataTrigger.Conditions>
+                                        <Setter Property="Foreground" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabSelectedInactiveText}}" />
                                     </MultiDataTrigger>
 
                                     <!--  Document Well : Tab / Unselected 未选中，透明  -->
@@ -388,19 +393,19 @@
                                         <!--#endregion-->
                                     </MultiDataTrigger>
 
-                                    <!--  Document Well : Tab / Unselected, hovered 未选中时鼠标移到此处，白  -->
-									<MultiTrigger>
-										<MultiTrigger.Conditions>
-											<Condition Property="IsMouseOver" Value="true" />
-											<Condition Property="Selector.IsSelected" Value="false" />
-										</MultiTrigger.Conditions>
-										<!--Dark下不需要，Light下需要改变背景色突出文字颜色-->
-										<Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedHoveredBackgroundColor}}" />
-										<Setter Property="Foreground" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedHoveredText}}" />
-										<Setter Property="Panel.ZIndex" Value="0" />
-									</MultiTrigger>
-									<!--灰-->
-									<Trigger Property="IsEnabled" Value="false">
+                                    <!--  Document Well : Tab / Unselected, hovered 未选中时鼠标移到此处，Dark下灰，白  -->
+                                    <MultiTrigger>
+                                        <MultiTrigger.Conditions>
+                                            <Condition Property="IsMouseOver" Value="true" />
+                                            <Condition Property="Selector.IsSelected" Value="false" />
+                                        </MultiTrigger.Conditions>
+                                        <!--  Dark下不需要，Light下需要改变背景色突出文字颜色,设置选项卡颜色Dark下不用修改  -->
+                                        <Setter TargetName="Bd" Property="Background" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedHoveredBackgroundColor}}" />
+                                        <Setter Property="Foreground" Value="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedHoveredText}}" />
+                                        <Setter Property="Panel.ZIndex" Value="0" />
+                                    </MultiTrigger>
+                                    <!--  灰  -->
+                                    <Trigger Property="IsEnabled" Value="false">
                                         <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
                                     </Trigger>
                                 </ControlTemplate.Triggers>
@@ -1382,7 +1387,17 @@
             <MenuItem
                 Command="{Binding Path=ChangeTabColorCommand}"
                 CommandParameter="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabBackground2E2E2E}}"
-                Header="无" />
+                Header="无">
+                <MenuItem.Icon>
+                    <Border
+                        Width="14"
+                        Height="14"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabBackground2E2E2E}}"
+                        CornerRadius="2" />
+                </MenuItem.Icon>
+            </MenuItem>
             <Separator
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Top"

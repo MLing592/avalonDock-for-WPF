@@ -9,12 +9,18 @@
 
 using AvalonDock.Commands;
 using AvalonDock.Layout;
+using AvalonDock.Themes;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Security.Policy;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Navigation;
 
 namespace AvalonDock.Controls
 {
@@ -109,13 +115,61 @@ namespace AvalonDock.Controls
 		/// <param name="parameter"></param>
 		protected virtual void ExecuteChangeTabColorCommand(object parameter)
 		{
-			//if(parameter is SolidColorBrush colorBrush)
+			//获取根组件DockingManager
+			DockingManager dockingManager = null;
+			var parent = this.LayoutElement.Parent;
+			while (parent != null)
+			{
+				parent = parent.Parent;
+				if (parent is LayoutRoot root)
+				{
+					dockingManager = root.Manager;
+					break;
+				}
+			}
+			if (dockingManager == null) return;
+
+			//转换brush
+			var brush = parameter as SolidColorBrush;
+			if (brush == null) return;
+
+			//更换资源颜色
+			var resourceDict = dockingManager.Resources;
+			Action<IEnumerable<ResourceDictionary>,int> loopThroughDicts = null;
+			loopThroughDicts = (dicts,level) =>
+			{
+				if (level > 3) return;
+				foreach (ResourceDictionary dict in dicts)
+				{
+					var leftKey = dict.Keys.OfType<ComponentResourceKey>().FirstOrDefault(k => k.ResourceId.ToString() == "DocumentWellTabUnselectedRectangleBackground");
+					var middleKey = dict.Keys.OfType<ComponentResourceKey>().FirstOrDefault(k => k.ResourceId.ToString() == "DocumentWellTabSelectedActiveBackground");
+					if (leftKey != null && middleKey != null)
+					{
+						dict[leftKey] = brush;
+						dict[middleKey] = brush;
+						return;
+					}
+
+					if (dict.MergedDictionaries.Count > 0)
+					{
+						loopThroughDicts(dict.MergedDictionaries.OfType<ResourceDictionary>(),level +1);
+					}
+				}
+			};
+			loopThroughDicts(resourceDict.MergedDictionaries.OfType<ResourceDictionary>(),1);
+
+			// 触发刷新操作
+			//dockingManager.ApplyTemplate();
+			//dockingManager.UpdateLayout();
+
+			//根据关联的TabItem修改属性，但不适合此种情况
+			//if (parameter is SolidColorBrush colorBrush)
 			//{
 			//	LayoutDocument Pane = this.LayoutElement as LayoutDocument;
-			//	if(Pane != null)
+			//	if (Pane != null)
 			//	{
 			//		Pane.TabItem.Background = colorBrush;
-			//	}			    
+			//	}
 			//}
 		}
 

@@ -8,7 +8,8 @@
     </ResourceDictionary.MergedDictionaries>
 
     <!--#region Tab Change Color Options-->
-    <!--#region 可选文档背景色-->
+	
+    <!--#region 可选文档背景色，默认-->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackgroundSelected}"
         options:Freeze="true"
@@ -73,11 +74,11 @@
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground946A5B}"
         options:Freeze="true"
-        Color="#6BC7A4" />
+        Color="#946A5B" />
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground6B8EC7}"
         options:Freeze="true"
-        Color="#946A5B" />
+        Color="#6B8EC7" />
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackgroundE0A2A4}"
         options:Freeze="true"
@@ -173,17 +174,17 @@
     <!--  Selected Document Highlight Header Top color (AccentColor)  -->
 
 
-	<!--  文档除左侧矩形条外背景色  -->
+    <!--  文档选项卡未选中鼠标放到选项卡时除左侧矩形条外背景色  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedHoveredBackgroundColor}"
         options:Freeze="true"
         Color="#2E2E2E" />
-	<!--  文档左方矩形条颜色，使用  -->
-	<SolidColorBrush
+    <!--  文档左方矩形条颜色，使用，改变选项卡颜色时需要改变这个颜色  -->
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedRectangleBackground}"
         options:Freeze="true"
         Color="#5BB2FA" />
-    <!--  选中时背景色，使用  -->
+    <!--  选中时背景色，使用，改变选项卡颜色时需要改变这个颜色  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveBackground}"
         options:Freeze="true"

@@ -44,7 +44,7 @@
             </Style.Triggers>
         </Style>
     </Window.Style>
-
+	
     <Grid>
         <Grid.Style>
             <Style TargetType="{x:Type Grid}">
@@ -129,7 +129,7 @@
                     </MenuItem>
                 </Menu>
 
-				<ComboBox
+                <ComboBox
                     Margin="4,0"
                     DisplayMemberPath="Item1"
                     ItemsSource="{Binding Themes}"
@@ -334,6 +334,26 @@
                             <LayoutDocument Title="doc1.css" ContentId="doc3" />
                             <LayoutDocument Title="doc1.css" ContentId="doc4" />
                             <LayoutDocument Title="doc1.css" ContentId="doc5" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc6" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc7" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc8" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc9" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc10" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc11" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc12" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc13" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc14" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc15" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc16" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc17" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc18" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc19" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc20" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc21" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc22" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc23" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc24" />
+                            <LayoutDocument Title="doc1.css" ContentId="doc25" />
                         </LayoutDocumentPane>
 
                         <LayoutAnchorablePaneGroup DockHeight="128" Orientation="Horizontal">

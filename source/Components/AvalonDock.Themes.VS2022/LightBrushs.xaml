@@ -166,23 +166,22 @@
     <!--  Document Well : Tab  -->
     <!--  Selected Document Highlight Header Top color (AccentColor)  -->
 
-    <!--  文档左方矩形条颜色  -->
-    <!--  文档除左侧矩形条外背景色  -->
+    <!--  文档选项卡未选中鼠标放到选项卡时除左侧矩形条外背景色  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedHoveredBackgroundColor}"
         options:Freeze="true"
         Color="#006CBE" />
-    <!--  文档左方矩形条颜色，使用  -->
+    <!--  文档左方矩形条颜色，使用，改变选项卡颜色时需要改变这个颜色  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedRectangleBackground}"
         options:Freeze="true"
         Color="#006CBE" />
-
+    <!--  选中时背景色，使用，改变选项卡颜色时需要改变这个颜色  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveBackground}"
         options:Freeze="true"
         Color="#006CBE" />
-
+    <!--  选中时文字颜色，使用  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveText}"
         options:Freeze="true"
