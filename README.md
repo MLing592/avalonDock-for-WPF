@@ -60,64 +60,64 @@
    </tr>
    <tr>
       <td>Dark</td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-无.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-淡紫色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-金色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-蓝绿色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-绛紫色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-绿色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-棕色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-亮蓝色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-南瓜色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-灰色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-珊瑚橘.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-青色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-品红.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-薄荷绿.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-深棕色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-蓝色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-粉色.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-无.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-淡紫色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-金色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-蓝绿色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-绛紫色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-绿色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-棕色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-亮蓝色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-南瓜色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-灰色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-珊瑚橘.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-青色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-品红.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-薄荷绿.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-深棕色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-蓝色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-粉色.png" width="1600" height="auto"></td>
    </tr>
    <tr>
       <td>Light</td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-无.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-淡紫色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-金色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-蓝绿色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-绛紫色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-绿色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-棕色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-亮蓝色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-南瓜色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-灰色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-珊瑚橘.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-青色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-品红.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-薄荷绿.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-深棕色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-蓝色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-粉色.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-无.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-淡紫色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-金色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-蓝绿色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-绛紫色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-绿色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-棕色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-亮蓝色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-南瓜色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-灰色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-珊瑚橘.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-青色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-品红.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-薄荷绿.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-深棕色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-蓝色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-粉色.png" width="1600" height="auto"></td>
 
    </tr>
    <tr>
       <td>Blue</td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-无.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-淡紫色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-金色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-蓝绿色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-绛紫色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-绿色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-棕色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-亮蓝色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-南瓜色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-灰色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-珊瑚橘.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-青色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-品红.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-薄荷绿.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-深棕色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-蓝色.png" width="400"></td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-粉色.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-无.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-淡紫色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-金色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-蓝绿色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-绛紫色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-绿色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-棕色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-亮蓝色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-南瓜色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-灰色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-珊瑚橘.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-青色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-品红.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-薄荷绿.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-深棕色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-蓝色.png" width="1600" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-粉色.png" width="1600" height="auto"></td>
    </tr>
 
 </table>
