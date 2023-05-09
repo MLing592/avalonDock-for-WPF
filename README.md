@@ -37,7 +37,7 @@
 
 </table>
 <br>
-<table width="100%">
+<table>
    <tr>
       <td>theme</td>
       <td>无</td>
