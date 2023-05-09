@@ -111,7 +111,7 @@
                             </Grid>
                         </Border>
                         <!--  Border 3  -->
-						<!--通过动画方式为菜单项提供平滑过渡效果-->
+                        <!--  通过动画方式为菜单项提供平滑过渡效果  -->
                         <Border
                             x:Name="TransitionBorder"
                             Width="0"

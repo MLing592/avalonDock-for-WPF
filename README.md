@@ -10,7 +10,7 @@
 ![Net4](https://badgen.net/badge/Framework/.Net&nbsp;4/blue) ![NetCore3](https://badgen.net/badge/Framework/NetCore&nbsp;3/blue) ![Net4](https://badgen.net/badge/Framework/.NET&nbsp;5/blue)
 
 ## 引用源地址：
-[![Dikster99 AvalonDock 4.72](https://github.com/Dirkster99/AvalonDock/tree/v4.72.0)]
+[Dikster99 AvalonDock 4.72.0](https://github.com/Dirkster99/AvalonDock/tree/v4.72.0)
 
 # Feature Added - 基于Dirkster.AvalonDock的VS2013主题修改而来的VS2022主题
 
@@ -84,6 +84,11 @@ to also theme standard elements, such as, button and textblock etc.
 - 4.删除部分无用颜色资源和键
 - 5.鼠标移动到选项卡上时，选项卡成为孤岛，左右上下皆隔开，选项卡不再直角，改为圆角
 
+## 2023-5-9
+
+- 1.修正部分颜色,例如"选项卡颜色-无"
+- 2.窗口等修改为半圆角
+- 3.预计，文档添加固定图标和固定功能
 
 
 

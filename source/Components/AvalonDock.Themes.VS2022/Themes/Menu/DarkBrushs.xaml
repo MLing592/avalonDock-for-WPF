@@ -82,8 +82,7 @@
         PresentationOptions:Freeze="True"
         Color="#333337" />
 
-	
-	<LinearGradientBrush x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type reskeys:ResourceKeys}, ResourceId=MenuBackgroundKey}" PresentationOptions:Freeze="True" StartPoint="0,0" EndPoint="0,1">
+    <LinearGradientBrush x:Key="{ComponentResourceKey TypeInTargetAssembly={x:Type reskeys:ResourceKeys}, ResourceId=MenuBackgroundKey}" PresentationOptions:Freeze="True" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Offset="1" Color="#1B1B1C" />
     </LinearGradientBrush>
 

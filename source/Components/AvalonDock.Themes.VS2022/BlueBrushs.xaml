@@ -9,7 +9,7 @@
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground2E2E2E}"
         options:Freeze="true"
-        Color="#2E2E2E" />
+        Color="#E2E2E2" />
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground9183EE}"
         options:Freeze="true"
@@ -381,7 +381,7 @@
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.ToolWindowCaptionButtonInactiveGlyph}"
         options:Freeze="true"
-        Color="#CED4DD" />
+        Color="#1E1E1E" />
 
     <!--  AccentColor  -->
     <SolidColorBrush

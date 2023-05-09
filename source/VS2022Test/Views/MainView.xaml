@@ -27,7 +27,7 @@
     <WindowChrome.WindowChrome>
         <WindowChrome
             x:Name="chrome"
-            CornerRadius="0"
+            CornerRadius="10"
             GlassFrameThickness="0"
             NonClientFrameEdges="None"
             ResizeBorderThickness="8" />
@@ -44,7 +44,7 @@
             </Style.Triggers>
         </Style>
     </Window.Style>
-	
+
     <Grid>
         <Grid.Style>
             <Style TargetType="{x:Type Grid}">

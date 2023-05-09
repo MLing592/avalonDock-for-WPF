@@ -19,6 +19,39 @@
     xmlns:avalonDockProperties="clr-namespace:AvalonDock.Properties"
     xmlns:shell="clr-namespace:Microsoft.Windows.Shell">
 
+    <!--#region CornerRadius-->
+    <CornerRadius
+        x:Key="TopCornerRadius"
+        BottomLeft="0"
+        BottomRight="0"
+        TopLeft="4"
+        TopRight="4" />
+    <CornerRadius
+        x:Key="BottomCornerRadius"
+        BottomLeft="4"
+        BottomRight="4"
+        TopLeft="0"
+        TopRight="0" />
+    <CornerRadius
+        x:Key="LeftCornerRadius"
+        BottomLeft="4"
+        BottomRight="4"
+        TopLeft="0"
+        TopRight="0" />
+    <CornerRadius
+        x:Key="RightCornerRadius"
+        BottomLeft="4"
+        BottomRight="4"
+        TopLeft="0"
+        TopRight="0" />
+    <CornerRadius
+        x:Key="SmallCornerRadius"
+        BottomLeft="2"
+        BottomRight="2"
+        TopLeft="2"
+        TopRight="2" />
+    <!--#endregion-->
+
     <!--  DocumentPaneControlStyle  -->
     <Style x:Key="DocumentPaneControlStyle" TargetType="{x:Type avalonDockControls:LayoutDocumentPaneControl}">
         <Setter Property="Template">
@@ -188,6 +221,7 @@
                         </Grid.RowDefinitions>
                         <!--  Following border is required to catch mouse events  -->
                         <Border Grid.RowSpan="2" Background="Transparent" />
+                        <!--  LayoutAnchorablePaneControl窗口圆角  -->
                         <Border
                             x:Name="ContentPanel"
                             Grid.Row="0"
@@ -195,6 +229,7 @@
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{StaticResource TopCornerRadius}"
                             KeyboardNavigation.DirectionalNavigation="Contained"
                             KeyboardNavigation.TabIndex="2"
                             KeyboardNavigation.TabNavigation="Cycle">
@@ -301,7 +336,8 @@
                     <Border
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="{TemplateBinding BorderThickness}">
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{StaticResource TopCornerRadius}">
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -838,10 +874,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type avalonDockControls:LayoutAnchorableTabItem}">
                     <avalonDockControls:DropDownControlArea DropDownContextMenu="{Binding Root.Manager.AnchorableContextMenu}" DropDownContextMenuDataContext="{Binding LayoutItem, RelativeSource={RelativeSource TemplatedParent}}">
+                        <!--  窗口圆角  -->
                         <Border
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{StaticResource TopCornerRadius}">
                             <Grid>
                                 <ContentPresenter
                                     Content="{Binding Model, RelativeSource={RelativeSource TemplatedParent}}"
@@ -863,17 +901,19 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type avalonDockControls:LayoutAnchorableControl}">
+                    <!--  停靠窗口圆角  -->
                     <Border
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="0"
                         KeyboardNavigation.TabNavigation="Cycle">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
-                            <Border x:Name="Header">
+                            <Border x:Name="Header" CornerRadius="0">
                                 <avalonDockControls:AnchorablePaneTitle Model="{Binding Model, RelativeSource={RelativeSource TemplatedParent}}" />
                             </Border>
 
@@ -1023,7 +1063,7 @@
     <Style x:Key="{x:Type avalonDockControls:LayoutAnchorableFloatingWindowControl}" TargetType="{x:Type avalonDockControls:LayoutAnchorableFloatingWindowControl}">
         <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" />
         <Setter Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" />
-        <Setter Property="BorderThickness" Value="3" />
+        <Setter Property="BorderThickness" Value="1" />
         <Setter Property="shell:WindowChrome.WindowChrome">
             <Setter.Value>
                 <shell:WindowChrome
@@ -1038,11 +1078,13 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type avalonDockControls:LayoutAnchorableFloatingWindowControl}">
                     <Grid>
+                        <!--  AnchorableFloatingWindow窗口圆角  -->
                         <Border
                             x:Name="WindowBorder"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="{StaticResource TopCornerRadius}">
                             <Grid Margin="3">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" MinHeight="16" />

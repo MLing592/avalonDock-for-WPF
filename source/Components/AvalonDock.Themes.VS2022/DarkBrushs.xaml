@@ -13,7 +13,7 @@
 	<SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground2E2E2E}"
         options:Freeze="true"
-        Color="#2E2E2E" />
+        Color="#E2E2E2" />
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground9183EE}"
         options:Freeze="true"
