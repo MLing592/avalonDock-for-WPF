@@ -1,4 +1,4 @@
-﻿/************************************************************************
+/************************************************************************
    AvalonDock
 
    Copyright (C) 2007-2013 Xceed Software Inc.
@@ -23,6 +23,7 @@ namespace AvalonDock.Layout
 		private bool _canMove = true;
 		private bool _isVisible = true;
 		private string _description = null;
+		private bool _isFixed = false;
 
 		#endregion fields
 
@@ -63,6 +64,17 @@ namespace AvalonDock.Layout
 				if (_description == value) return;
 				_description = value;
 				RaisePropertyChanged(nameof(Description));
+			}
+		}
+
+		public bool IsFixed
+		{
+			get => _isFixed;
+			set
+			{
+				if (value == _isFixed) return;
+				_isFixed = value;
+				RaisePropertyChanged(nameof(IsFixed));
 			}
 		}
 

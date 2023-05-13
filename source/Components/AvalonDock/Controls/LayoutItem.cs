@@ -220,6 +220,8 @@ namespace AvalonDock.Controls
 		/// <summary>Provides derived classes an opportunity to handle changes to the <see cref="IsActive"/> property.</summary>
 		protected virtual void OnIsActiveChanged(DependencyPropertyChangedEventArgs e)
 		{
+			//ReentrantFlag 是一个互斥标志，用于控制具有可重入代码的多线程代码的执行。
+			//当 ReentrantFlag 的值为 false 时，表示当前没有线程正在运行其可重入部分。而当 ReentrantFlag 的值为 true 时，则表示至少有一个线程正在运行其可重入部分
 			if (!_isActiveReentrantFlag.CanEnter) return;
 			using (_isActiveReentrantFlag.Enter())
 			{
@@ -694,12 +696,14 @@ namespace AvalonDock.Controls
 
 
 
+
 		#endregion Properties
 
 		#region Internal Methods
 
 		protected virtual void InitDefaultCommands()
 		{
+			//关闭，浮动，作为文档，关闭除此之外所有，关闭所有，激活，新建垂直标签组，新建水平标签组，移至下一个标签组，移至上一个标签组
 			_defaultCloseCommand = new RelayCommand<object>(ExecuteCloseCommand, CanExecuteCloseCommand);
 			_defaultFloatCommand = new RelayCommand<object>(ExecuteFloatCommand, CanExecuteFloatCommand);
 			_defaultDockAsDocumentCommand = new RelayCommand<object>(ExecuteDockAsDocumentCommand, CanExecuteDockAsDocumentCommand);

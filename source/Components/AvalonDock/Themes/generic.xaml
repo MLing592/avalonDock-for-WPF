@@ -987,7 +987,8 @@
                             x:Name="WindowBorder"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="20">
                             <Grid Margin="3">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" MinHeight="16" />
@@ -998,17 +999,17 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Border Visibility="{Binding Path=Model.IsSinglePane, RelativeSource={RelativeSource TemplatedParent}, Converter={avalonDockConverters:BoolToVisibilityConverter}}">
-                                        <avalonDockControls:DropDownControlArea DropDownContextMenu="{Binding Model.Root.Manager.DocumentContextMenu, RelativeSource={RelativeSource TemplatedParent}}" DropDownContextMenuDataContext="{Binding Path=SingleContentLayoutItem, RelativeSource={RelativeSource TemplatedParent}}">
-                                            <ContentPresenter
+										<ColumnDefinition Width="Auto" />
+									</Grid.ColumnDefinitions>
+									<Border CornerRadius="20" Visibility="{Binding Path=Model.IsSinglePane, RelativeSource={RelativeSource TemplatedParent}, Converter={avalonDockConverters:BoolToVisibilityConverter}}">
+										<avalonDockControls:DropDownControlArea DropDownContextMenu="{Binding Model.Root.Manager.DocumentContextMenu, RelativeSource={RelativeSource TemplatedParent}}" DropDownContextMenuDataContext="{Binding Path=SingleContentLayoutItem, RelativeSource={RelativeSource TemplatedParent}}">
+											<ContentPresenter
                                                 Content="{Binding Model.SinglePane.SelectedContent, RelativeSource={RelativeSource TemplatedParent}}"
                                                 ContentTemplate="{Binding Model.Root.Manager.DocumentTitleTemplate, RelativeSource={RelativeSource TemplatedParent}}"
                                                 ContentTemplateSelector="{Binding Model.Root.Manager.DocumentTitleTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}" />
-                                        </avalonDockControls:DropDownControlArea>
-                                    </Border>
-                                    <Button
+										</avalonDockControls:DropDownControlArea>
+									</Border>
+									<Button
                                         Grid.Column="1"
                                         shell:WindowChrome.IsHitTestVisibleInChrome="True"
                                         Command="{x:Static shell:SystemCommands.MaximizeWindowCommand}"

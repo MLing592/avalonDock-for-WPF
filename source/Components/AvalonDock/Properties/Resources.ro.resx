@@ -147,6 +147,9 @@
   <data name="Anchorable_Hide" xml:space="preserve">
     <value>Ascunde</value>
   </data>
+  <data name="Document_Anchor" xml:space="preserve">
+    <value>fixa</value>
+  </data>
   <data name="Document_BtnPinned_Hint" xml:space="preserve">
     <value>Starea de comutare Pin</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="Window_Maximize" xml:space="preserve">
     <value>Maximizează</value>
+  </data>
+  <data name="Window_Minimize" xml:space="preserve">
+    <value>minimiza</value>
   </data>
   <data name="Window_Restore" xml:space="preserve">
     <value>Restaurează</value>

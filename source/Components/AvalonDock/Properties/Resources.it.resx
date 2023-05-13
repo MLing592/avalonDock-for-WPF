@@ -147,6 +147,9 @@
   <data name="Anchorable_Hide" xml:space="preserve">
     <value>Nascondi</value>
   </data>
+  <data name="Document_Anchor" xml:space="preserve">
+    <value>fisso</value>
+  </data>
   <data name="Document_BtnPinned_Hint" xml:space="preserve">
     <value>Stato Toggle Pin</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="Window_Maximize" xml:space="preserve">
     <value>Ingrandisci</value>
+  </data>
+  <data name="Window_Minimize" xml:space="preserve">
+    <value>minimizzare</value>
   </data>
   <data name="Window_Restore" xml:space="preserve">
     <value>Ripristina</value>

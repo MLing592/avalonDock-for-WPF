@@ -80,6 +80,9 @@ namespace AvalonDock.Themes.VS2022.Themes
 		//设置选项卡菜单的背景色
 		public static readonly ComponentResourceKey DocumentContextMenuBackground = new ComponentResourceKey(typeof(ResourceKeys), "DocumentContextMenuBackground");//背景色
 		public static readonly ComponentResourceKey DocumentContextMenuForeground = new ComponentResourceKey(typeof(ResourceKeys), "DocumentContextMenuForeground");//前景色
+		//设置文选项卡固定按钮固定未激活下颜色
+		public static readonly ComponentResourceKey DocumentWellTabButtonFixedGlyph = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabButtonFixedGlyph");//前景色
+
 		#endregion
 
 		public static readonly ComponentResourceKey DocumentWellTabSelectedActiveBackground = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabSelectedActiveBackground");
@@ -95,6 +98,7 @@ namespace AvalonDock.Themes.VS2022.Themes
 
 		// Document Well : Tab : Button
 		public static readonly ComponentResourceKey DocumentWellTabButtonSelectedActiveGlyph = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabButtonSelectedActiveGlyph");
+		public static readonly ComponentResourceKey DocumentWellTabButtonSelectedActiveGlyph2 = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabButtonSelectedActiveGlyph2");
 
 		// AccentColor
 		public static readonly ComponentResourceKey DocumentWellTabButtonSelectedActiveHoveredBackground = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabButtonSelectedActiveHoveredBackground");

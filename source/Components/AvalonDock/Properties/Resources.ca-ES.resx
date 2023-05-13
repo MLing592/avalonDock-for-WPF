@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -147,6 +147,9 @@
   <data name="Anchorable_Hide" xml:space="preserve">
     <value>Amagar</value>
   </data>
+  <data name="Document_Anchor" xml:space="preserve">
+    <value>fix</value>
+  </data>
   <data name="Document_BtnPinned_Hint" xml:space="preserve">
     <value>Canviar l'estat del pin</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="Window_Maximize" xml:space="preserve">
     <value>Maximitzar</value>
+  </data>
+  <data name="Window_Minimize" xml:space="preserve">
+    <value>minimitzar</value>
   </data>
   <data name="Window_Restore" xml:space="preserve">
     <value>Restaurar</value>

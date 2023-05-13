@@ -8,9 +8,9 @@
     </ResourceDictionary.MergedDictionaries>
 
 
-	<!--#region DocumentTabColor 可选文档背景色-->
+    <!--#region DocumentTabColor 可选文档背景色-->
 
-	<SolidColorBrush
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabBackground2E2E2E}"
         options:Freeze="true"
         Color="#E2E2E2" />
@@ -79,19 +79,19 @@
         options:Freeze="true"
         Color="#E0A2A4" />
     <!--#endregion-->
-	
-	<!--#region DocumentContextMenu Background Foreground 选项卡菜单背景色前景色-->
-	<SolidColorBrush
+
+    <!--#region DocumentContextMenu Background Foreground 选项卡菜单背景色前景色-->
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentContextMenuBackground}"
         options:Freeze="true"
         Color="#2E2E2E" />
-	<SolidColorBrush
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentContextMenuForeground}"
         options:Freeze="true"
         Color="#D6D6D6" />
-	<!--#endregion-->
+    <!--#endregion-->
 
-	<!--  Accent Keys  -->
+    <!--  Accent Keys  -->
     <Color x:Key="{x:Static reskeys:ResourceKeys.ControlAccentColorKey}">#FF007ACC</Color>
 
     <SolidColorBrush
@@ -231,8 +231,18 @@
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonSelectedActiveGlyph}"
         options:Freeze="true"
         Color="#000000" />
+    <!--  为了区别开以前得颜色  -->
+	<SolidColorBrush
+        x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonSelectedActiveGlyph2}"
+        options:Freeze="true"
+        Color="#FFFFFF" />
+	<!--设置文选项卡固定按钮固定未激活下颜色-->
+	<SolidColorBrush
+        x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonFixedGlyph}"
+        options:Freeze="true"
+        Color="#FFFFFF" />
 
-    <!--  AccentColor  -->
+	<!--  AccentColor  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonSelectedActiveHoveredBackground}"
         options:Freeze="true"

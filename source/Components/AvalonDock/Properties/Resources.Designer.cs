@@ -151,6 +151,15 @@ namespace AvalonDock.Properties {
         }
         
         /// <summary>
+        ///   查找类似 fix 的本地化字符串。
+        /// </summary>
+        public static string Document_Anchor {
+            get {
+                return ResourceManager.GetString("Document_Anchor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Toggle Pin status 的本地化字符串。
         /// </summary>
         public static string Document_BtnPinned_Hint {
@@ -264,6 +273,15 @@ namespace AvalonDock.Properties {
         public static string Window_Maximize {
             get {
                 return ResourceManager.GetString("Window_Maximize", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Minimize 的本地化字符串。
+        /// </summary>
+        public static string Window_Minimize {
+            get {
+                return ResourceManager.GetString("Window_Minimize", resourceCulture);
             }
         }
         

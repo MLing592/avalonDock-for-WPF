@@ -147,6 +147,9 @@
   <data name="Anchorable_Hide" xml:space="preserve">
     <value>Cacher</value>
   </data>
+  <data name="Document_Anchor" xml:space="preserve">
+    <value>fixer</value>
+  </data>
   <data name="Document_BtnPinned_Hint" xml:space="preserve">
     <value>Ancrer / désancrer</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="Window_Maximize" xml:space="preserve">
     <value>Plein Écran</value>
+  </data>
+  <data name="Window_Minimize" xml:space="preserve">
+    <value>minimiser</value>
   </data>
   <data name="Window_Restore" xml:space="preserve">
     <value>Restaurer</value>

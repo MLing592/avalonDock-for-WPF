@@ -33,6 +33,7 @@ namespace AvalonDock.Controls
 		private List<TabItem> _otherTabs = null;
 		private Rect _parentDocumentTabPanelScreenArea;
 		private DocumentPaneTabPanel _parentDocumentTabPanel;
+		private DocumentPaneTabWrapPanel _parentDocumentTabWrapPanel;
 		private bool _isMouseDown = false;
 		private Point _mouseDownPoint;
 		private bool _allowDrag = false;
@@ -160,7 +161,15 @@ namespace AvalonDock.Controls
 				var childrenList = container.Children.ToList();
 				containerPane.MoveChild(childrenList.IndexOf(Model), childrenList.IndexOf(targetModel));
 				Model.IsActive = true;
-				_parentDocumentTabPanel.UpdateLayout();
+				if(IsVS2022())
+				{
+					_parentDocumentTabWrapPanel?.UpdateLayout();
+				}
+				else
+				{
+					_parentDocumentTabPanel?.UpdateLayout();
+				}
+				
 				UpdateDragDetails();
 			}
 		}
@@ -203,11 +212,28 @@ namespace AvalonDock.Controls
 
 		#region Private Methods
 
+		private bool IsVS2022()
+		{
+			bool result = false;
+			var manager = this.LayoutItem?.LayoutElement?.Root.Manager;
+			if (manager != null && manager.Theme.ToString().Contains("VS2022")) { result = true; }
+			return result;
+		}
+
 		private void UpdateDragDetails()
 		{
-			_parentDocumentTabPanel = this.FindLogicalAncestor<DocumentPaneTabPanel>();
-			_parentDocumentTabPanelScreenArea = _parentDocumentTabPanel.GetScreenArea();
-			_otherTabs = _parentDocumentTabPanel.Children.Cast<TabItem>().Where(ch => ch.Visibility != Visibility.Collapsed).ToList();
+			if (IsVS2022())
+			{
+				_parentDocumentTabWrapPanel = this.FindLogicalAncestor<DocumentPaneTabWrapPanel>();
+				_parentDocumentTabPanelScreenArea = _parentDocumentTabWrapPanel.GetScreenArea();
+				_otherTabs = _parentDocumentTabWrapPanel.Children.Cast<TabItem>().Where(ch => ch.Visibility != Visibility.Collapsed).ToList();
+			}
+			else
+			{
+				_parentDocumentTabPanel = this.FindLogicalAncestor<DocumentPaneTabPanel>();
+				_parentDocumentTabPanelScreenArea = _parentDocumentTabPanel.GetScreenArea();
+				_otherTabs = _parentDocumentTabPanel.Children.Cast<TabItem>().Where(ch => ch.Visibility != Visibility.Collapsed).ToList();
+			}			
 			var currentTabScreenArea = this.FindLogicalAncestor<TabItem>().GetScreenArea();
 			_otherTabsScreenArea = _otherTabs.Select(ti =>
 			{

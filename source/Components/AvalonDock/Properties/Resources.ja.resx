@@ -147,6 +147,9 @@
   <data name="Anchorable_Hide" xml:space="preserve">
     <value>非表示</value>
   </data>
+  <data name="Document_Anchor" xml:space="preserve">
+    <value>固定する</value>
+  </data>
   <data name="Document_BtnPinned_Hint" xml:space="preserve">
     <value>ピン ステータスを切り替える</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="Window_Maximize" xml:space="preserve">
     <value>最大化</value>
+  </data>
+  <data name="Window_Minimize" xml:space="preserve">
+    <value>最小限にする</value>
   </data>
   <data name="Window_Restore" xml:space="preserve">
     <value>元に戻す</value>

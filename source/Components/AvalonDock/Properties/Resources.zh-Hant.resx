@@ -189,4 +189,10 @@
   <data name="Document_ChangeColor" xml:space="preserve">
     <value>設置選項卡顏色</value>
   </data>
+  <data name="Window_Minimize" xml:space="preserve">
+    <value>最小化</value>
+  </data>
+  <data name="Document_Anchor" xml:space="preserve">
+    <value>固定</value>
+  </data>
 </root>

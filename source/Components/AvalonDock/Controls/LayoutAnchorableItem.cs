@@ -55,7 +55,7 @@ namespace AvalonDock.Controls
 
 		#region Properties
 
-		#region HideCommand
+		#region HideCommand 隐藏
 
 		/// <summary><see cref="HideCommand"/> dependency property.</summary>
 		public static readonly DependencyProperty HideCommandProperty = DependencyProperty.Register(nameof(HideCommand), typeof(ICommand), typeof(LayoutAnchorableItem),
@@ -86,7 +86,7 @@ namespace AvalonDock.Controls
 
 		#endregion HideCommand
 
-		#region AutoHideCommand
+		#region AutoHideCommand 执行停靠/自动隐藏
 
 		/// <summary><see cref="AutoHideCommand"/> dependency property.</summary>
 		public static readonly DependencyProperty AutoHideCommandProperty = DependencyProperty.Register(nameof(AutoHideCommand), typeof(ICommand), typeof(LayoutAnchorableItem),

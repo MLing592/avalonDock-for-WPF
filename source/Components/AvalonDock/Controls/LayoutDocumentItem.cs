@@ -40,6 +40,7 @@ namespace AvalonDock.Controls
 		private LayoutDocument _document;   // The content of this item
 		#region Add
 		private ICommand _defaultChangeTabColorCommand;
+		private ICommand _defaultFixCommand;
 		#endregion
 
 		#endregion fields
@@ -77,7 +78,7 @@ namespace AvalonDock.Controls
 
 		#endregion Description
 
-		#region ChangeTabColorCommand Add
+		#region ChangeTabColorCommand 改变选项卡颜色
 
 		/// <summary><see cref="ChangeTabColorCommand"/> dependency property.</summary>
 		public static readonly DependencyProperty ChangeTabColorCommandProperty = DependencyProperty.Register(nameof(ChangeTabColorCommand), typeof(ICommand), typeof(LayoutItem),
@@ -116,17 +117,7 @@ namespace AvalonDock.Controls
 		protected virtual void ExecuteChangeTabColorCommand(object parameter)
 		{
 			//获取根组件DockingManager
-			DockingManager dockingManager = null;
-			var parent = this.LayoutElement.Parent;
-			while (parent != null)
-			{
-				parent = parent.Parent;
-				if (parent is LayoutRoot root)
-				{
-					dockingManager = root.Manager;
-					break;
-				}
-			}
+			DockingManager dockingManager = this.LayoutElement?.Root.Manager;
 			if (dockingManager == null) return;
 
 			//转换brush
@@ -175,6 +166,65 @@ namespace AvalonDock.Controls
 
 
 		#endregion ChangeTabColorCommand
+
+		#region FixCommand 固定选项卡
+
+		/// <summary><see cref="FixCommand"/> dependency property.</summary>
+		public static readonly DependencyProperty FixCommandProperty = DependencyProperty.Register(nameof(FixCommand), typeof(ICommand), typeof(LayoutItem),
+				new FrameworkPropertyMetadata(null, OnFixCommandChanged, CoerceFixCommandValue));
+
+		/// <summary>Gets/sets the command to execute when user click the Pane close button.</summary>
+		[Bindable(true), Description("Gets/sets the command to execute when user click the Pane command of change tab color ."), Category("Other")]
+		public ICommand FixCommand
+		{
+			get => (ICommand)GetValue(FixCommandProperty);
+			set => SetValue(FixCommandProperty, value);
+		}
+
+		/// <summary>Handles changes to the <see cref="FixCommand"/> property.</summary>
+		/// <summary>属性值更改时引发的回调函数 <see cref="FixCommand"/> property.</summary>
+		private static void OnFixCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+		{
+
+		}
+
+		/// <summary>Coerces the <see cref="FixCommand"/>  value.</summary>
+		/// <summary>用来强制限制属性值的范围或取值 <see cref="FixCommand"/>  value.</summary>
+		private static object CoerceFixCommandValue(DependencyObject d, object value) => value;
+
+		/// <summary>
+		/// 是否可以执行
+		/// </summary>
+		/// <param name="parameter"></param>
+		/// <returns></returns>
+		private bool CanExecuteFixCommand(object parameter) => _document != null;
+
+		/// <summary>
+		/// 执行命令
+		/// </summary>
+		/// <param name="parameter"></param>
+		protected virtual void OnExecuteFixCommand(object parameter)
+		{
+			bool newValue = !_document.IsFixed;
+			var pane = _document.Parent as LayoutDocumentPane;
+			var index = pane.IndexOfChild(_document);
+			var unfixedElements = pane.Children.Cast<LayoutDocument>().FirstOrDefault(x => !x.IsFixed);
+			var MinIndex = newValue ? pane.IndexOfChild(unfixedElements) : pane.IndexOfChild(unfixedElements) - 1;
+			//前后索引相同不会重新排列时
+			if (index == MinIndex)
+			{
+				//1.强制容器重排
+				//pane.RaiseChildrenTreeChanged();
+				//2.文档移动再移回
+				var count = pane.Children.Count - 1;
+				pane.MoveChild(index, count);
+				pane.MoveChild(count, index);
+			}
+			pane.MoveChild(index, MinIndex);
+			_document.IsFixed = newValue;
+		}
+
+		#endregion FixCommand
 
 		#endregion Properties
 
@@ -226,6 +276,7 @@ namespace AvalonDock.Controls
 		{
 			#region Add
 			_defaultChangeTabColorCommand = new RelayCommand<object>(ExecuteChangeTabColorCommand, CanExecuteChangeTabColorCommand);
+			_defaultFixCommand = new RelayCommand<object>(OnExecuteFixCommand, CanExecuteFixCommand);
 			#endregion
 			base.InitDefaultCommands();
 		}
@@ -237,6 +288,7 @@ namespace AvalonDock.Controls
 		{
 			#region Add
 			if (ChangeTabColorCommand == _defaultChangeTabColorCommand) BindingOperations.ClearBinding(this, ChangeTabColorCommandProperty);
+			if (FixCommand == _defaultFixCommand) BindingOperations.ClearBinding(this, FixCommandProperty);
 			#endregion
 			base.ClearDefaultBindings();
 		}
@@ -248,6 +300,7 @@ namespace AvalonDock.Controls
 		{
 			#region Add
 			if (ChangeTabColorCommand == null) ChangeTabColorCommand = _defaultChangeTabColorCommand;
+			if (FixCommand == null) FixCommand = _defaultFixCommand;
 			#endregion
 			base.SetDefaultBindings();
 		}

@@ -187,7 +187,7 @@ to also theme standard elements, such as, button and textblock etc.
 
 ## 2023-5-8
 
-- 1.修改AvalonDock/Controls/DocumentPaneTabPanel.cs，原版容器为Panel，由一行显示文档，多余隐藏，现在使用WrapPanel作为面板容器
+- 1.修改AvalonDock/Controls/DocumentPaneTabPanel.cs，原版容器为Panel，由一行显示文档，多余隐藏，现在使用WrapPanel作为面板容器，新增对象DocumentPaneTabWrapPanel,兼容其他主题
 - 2.新增AvalonDock/Controls/LayoutDocumentItem.cs，增加ChangeTabColorCommand命令对应方法，寻找资源并统一替换颜色，实现统一更换选项卡颜色
 - 3.重写了AvalonDock/Controls/LayoutDocumentTabItem.cs下OnMouseRightButtonDown方法，使右键LayoutDocument时，LayoutDocument即被选中
 - 4.删除部分无用颜色资源和键
@@ -199,6 +199,18 @@ to also theme standard elements, such as, button and textblock etc.
 - 2.窗口等修改为半圆角
 - 3.预计，文档添加固定图标和固定功能
 
+## 2023-5-13
+
+- 1.浮动窗口添加最小化,最大化后不显示最小化，因为发现此时点击出现最小化未完成立即回到最大化
+- 2.浮动窗口圆角，增加新增元素主题配色
+- 3.文档添加锚定按钮,LayoutDocument添加IsFixed属性，LayoutDocumentItem添加FixCommand命令
+- 4.顶部彩色标签容器修改自定义Panel，重写MeasureOverride和ArrangeOverride
+- 5.修正原先已存在不合理之处：文档选项卡选中被激活，选中其他窗口，再次返回选中文档内容框(非选项卡),此时自动激活选中第一项而非原选中项。content不可为null，否则无效
+- 5.1.逻辑：先触发newDocument的isActive，再触发oldDocument的isActive，切换ActiveContent，入口点在LayoutContent的IsActive属性set
+- 5.2.修改了LayoutRoot的InternalSetActiveContent方法，原本当从Docuemnt切换到工具窗口时，LastFocusedDocument被清空导致返回Document时默认第一个Document被激活，现在保留
+- 5.3.修改了LayoutRoot的CompareTo，测试时发现随意写的content与原先默认创建的fileviewmodel，无法比较，遂加上一个判断 other.Content is IComparable
+- 6.修改逻辑，固定文档被添加到固定文档队列末尾
+- 7.预计添加固定文档与未固定文档永远分离，不可破坏
 
 
 

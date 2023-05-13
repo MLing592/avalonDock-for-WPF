@@ -147,6 +147,9 @@
   <data name="Anchorable_Hide" xml:space="preserve">
     <value>Скрыть</value>
   </data>
+  <data name="Document_Anchor" xml:space="preserve">
+    <value>фиксировать</value>
+  </data>
   <data name="Document_BtnPinned_Hint" xml:space="preserve">
     <value>Статус Переключение Pin</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="Window_Maximize" xml:space="preserve">
     <value>Развернуть</value>
+  </data>
+  <data name="Window_Minimize" xml:space="preserve">
+    <value>минимизировать</value>
   </data>
   <data name="Window_Restore" xml:space="preserve">
     <value>Восстановить</value>
