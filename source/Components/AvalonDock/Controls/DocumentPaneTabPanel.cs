@@ -159,7 +159,7 @@ namespace AvalonDock.Controls
 				if (!child.IsVisible) { continue; }
 
 				// 判断是否为固定与非固定分界线，或元素累计宽度超出容器宽度
-				var current = (child as TabItem).Content as LayoutDocument;
+				var current = (child as TabItem)?.Content as LayoutDocument;
 				var ine = Math.Max(Children.IndexOf(child) - 1, 0);
 				var front = (Children[ine] as TabItem).Content as LayoutDocument;
 				if ((current?.IsFixed == false && front.IsFixed == true) || (currentLineLength + child.DesiredSize.Width > constraint.Width))
@@ -204,13 +204,13 @@ namespace AvalonDock.Controls
 				double height = child.DesiredSize.Height;
 				bool needsNewLine = false;
 
-				var current = (child as TabItem).Content as LayoutDocument;
+				var current = (child as TabItem)?.Content as LayoutDocument;
 				var ine = Math.Max(Children.IndexOf(child) - 1, 0);
-				var front = (Children[ine] as TabItem).Content as LayoutDocument;
+				var front = (Children[ine] as TabItem)?.Content as LayoutDocument;
 				//执行完LayoutDocumentItem的OnExecuteFixCommand方法后才开始MeasureOverride和ArrangeOverride
 				//判断当前是否到了固定与非固定分界点
 				//当固定/取消固定标签时，current为选中固定/取消固定的标签，front为index为0即也是选中固定/取消固定的标签
-				if ((currentLineLength + width > finalSize.Width) || (current?.IsFixed == false && front.IsFixed == true))
+				if ((currentLineLength + width > finalSize.Width) || (current?.IsFixed == false && front?.IsFixed == true))
 				{
 					needsNewLine = true;
 					currentLineNumber++; // 控件换行了

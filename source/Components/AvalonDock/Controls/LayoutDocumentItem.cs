@@ -206,9 +206,10 @@ namespace AvalonDock.Controls
 		protected virtual void OnExecuteFixCommand(object parameter)
 		{
 			bool newValue = !_document.IsFixed;
-			var pane = _document.Parent as LayoutDocumentPane;
+			var pane = _document.FindParent<LayoutDocumentPane>();
 			var index = pane.IndexOfChild(_document);
 			var unfixedElements = pane.Children.Cast<LayoutDocument>().FirstOrDefault(x => !x.IsFixed);
+			//不-1时移动到元素前
 			var MinIndex = newValue ? pane.IndexOfChild(unfixedElements) : pane.IndexOfChild(unfixedElements) - 1;
 			//前后索引相同不会重新排列时
 			if (index == MinIndex)
@@ -216,9 +217,9 @@ namespace AvalonDock.Controls
 				//1.强制容器重排
 				//pane.RaiseChildrenTreeChanged();
 				//2.文档移动再移回
-				var count = pane.Children.Count - 1;
-				pane.MoveChild(index, count);
-				pane.MoveChild(count, index);
+				var final = pane.Children.Count - 1;
+				pane.MoveChild(index, final);
+				pane.MoveChild(final, index);
 			}
 			pane.MoveChild(index, MinIndex);
 			_document.IsFixed = newValue;
