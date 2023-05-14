@@ -2309,6 +2309,7 @@
                 <!--  FloatingWindow圆角  -->
                 <shell:WindowChrome
                     CaptionHeight="32"
+                    CornerRadius="0"
                     GlassFrameThickness="0"
                     ResizeBorderThickness="20"
                     ShowSystemMenu="False" />
@@ -2318,11 +2319,13 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type avalonDockControls:LayoutDocumentFloatingWindowControl}">
                     <Grid>
+                        <!--  FloatingWindow圆角  -->
                         <Border
                             x:Name="WindowBorder"
                             Background="{TemplateBinding Background}"
                             BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="1">
+                            BorderThickness="1"
+                            CornerRadius="0">
                             <Grid>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" MinHeight="32" />
