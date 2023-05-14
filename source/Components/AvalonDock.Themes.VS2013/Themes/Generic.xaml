@@ -1801,6 +1801,9 @@
 
     <Style x:Key="{x:Type avalonDockControls:LayoutDocumentFloatingWindowControl}" TargetType="{x:Type avalonDockControls:LayoutDocumentFloatingWindowControl}">
 		<Setter Property="UseLayoutRounding" Value="True" />
+		<Setter Property="AllowMinimize" Value="True" />
+		<Setter Property="ShowInTaskbar" Value="True" />
+		<Setter Property="OwnedByDockingManagerWindow" Value="False" />
 		<Setter Property="Background" Value="{DynamicResource {x:Static reskeys:ResourceKeys.FloatingDocumentWindowBackground}}" />
         <Setter Property="BorderBrush" Value="{DynamicResource {x:Static reskeys:ResourceKeys.FloatingDocumentWindowBorder}}" />
         <Setter Property="shell:WindowChrome.WindowChrome">
