@@ -11,7 +11,9 @@ using AvalonDock.Layout;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
+using System.Numerics;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -22,14 +24,14 @@ namespace AvalonDock.Controls
 	/// Provides a panel that contains the TabItem Headers of the <see cref="LayoutDocumentPaneControl"/>.
 	/// 除VS2022外使用
 	/// </summary>
-	public class DocumentPaneTabPanel : Panel
+	public class DocumentPaneTabOriginPanel : Panel
 	{
 		#region Constructors
 
 		/// <summary>
 		/// Static constructor
 		/// </summary>
-		public DocumentPaneTabPanel()
+		public DocumentPaneTabOriginPanel()
 		{
 			this.FlowDirection = System.Windows.FlowDirection.LeftToRight;
 		}
@@ -138,11 +140,16 @@ namespace AvalonDock.Controls
 
 
 	//VS2022使用
-	public class DocumentPaneTabWrapPanel : WrapPanel
+	public class DocumentPaneTabPanel : WrapPanel
 	{
-		public DocumentPaneTabWrapPanel() 
+		public DocumentPaneTabPanel() 
 		{
-			this.FlowDirection = System.Windows.FlowDirection.LeftToRight; 
+			this.FlowDirection = System.Windows.FlowDirection.LeftToRight;
+		}
+
+		protected override void OnVisualChildrenChanged(DependencyObject visualAdded, DependencyObject visualRemoved)
+		{
+			base.OnVisualChildrenChanged(visualAdded, visualRemoved);
 		}
 
 		protected override Size MeasureOverride(Size constraint)
@@ -155,21 +162,36 @@ namespace AvalonDock.Controls
 			// 遍历所有子元素 
 			foreach (UIElement child in InternalChildren)
 			{
+				bool needsNewLine = false;
 				// 如果该子元素不可见，则跳过
 				if (!child.IsVisible) { continue; }
 
-				// 判断是否为固定与非固定分界线，或元素累计宽度超出容器宽度
-				var current = (child as TabItem)?.Content as LayoutDocument;
+				// 固定文档另立一行
+				var currentContent = (child as TabItem)?.Content;
 				var ine = Math.Max(Children.IndexOf(child) - 1, 0);
-				var front = (Children[ine] as TabItem).Content as LayoutDocument;
-				if ((current?.IsFixed == false && front.IsFixed == true) || (currentLineLength + child.DesiredSize.Width > constraint.Width))
+				var frontContent = (Children[ine] as TabItem).Content;
+				if ((currentContent is LayoutDocument current && frontContent is LayoutDocument front) && 
+					(current?.IsFixed == false && front?.IsFixed == true))
 				{
-					// 如果需要换行，则更新总高度、当前行最大高度和当前行宽度
+					needsNewLine = true;
+				}
+				//非文档另立一行
+				if(currentContent is LayoutDocument && !(frontContent is LayoutDocument))
+				{
+					needsNewLine = true;
+				}
+				//元素累计宽度超出一行则换行
+				if (currentLineLength + child.DesiredSize.Width > constraint.Width)
+				{
+					needsNewLine = true;
+				}
+				// 如果需要换行，则更新总高度、当前行最大高度和当前行宽度
+				if (needsNewLine)
+				{
 					maxLineHeight += currentLineMaxHeight;
 					currentLineLength = 0;
 					currentLineMaxHeight = 0;
 				}
-
 				// 测量子元素，使用允许无限高度的约束
 				child.Measure(infiniteConstraintHgt);
 
@@ -195,7 +217,6 @@ namespace AvalonDock.Controls
 			double currentLineLength = 0; // 当前行已有元素的总长度
 			double currentLineMaxHeight = 0; // 当前行的最大高度
 			int currentLineNumber = 0; // 当前行编号
-
 			foreach (UIElement child in InternalChildren)
 			{
 				if (!child.IsVisible) { continue; } // 如果不需要重新排列，则继续处理下一个子元素
@@ -204,13 +225,15 @@ namespace AvalonDock.Controls
 				double height = child.DesiredSize.Height;
 				bool needsNewLine = false;
 
-				var current = (child as TabItem)?.Content as LayoutDocument;
+				var currentContent = (child as TabItem)?.Content;
 				var ine = Math.Max(Children.IndexOf(child) - 1, 0);
-				var front = (Children[ine] as TabItem)?.Content as LayoutDocument;
+				var frontContent = (Children[ine] as TabItem).Content;
 				//执行完LayoutDocumentItem的OnExecuteFixCommand方法后才开始MeasureOverride和ArrangeOverride
 				//判断当前是否到了固定与非固定分界点
 				//当固定/取消固定标签时，current为选中固定/取消固定的标签，front为index为0即也是选中固定/取消固定的标签
-				if ((currentLineLength + width > finalSize.Width) || (current?.IsFixed == false && front?.IsFixed == true))
+				if ((currentContent is LayoutDocument current && frontContent is LayoutDocument front) &&
+					(current?.IsFixed == false && front?.IsFixed == true) ||
+					(currentLineLength + width > finalSize.Width))
 				{
 					needsNewLine = true;
 					currentLineNumber++; // 控件换行了
@@ -218,7 +241,15 @@ namespace AvalonDock.Controls
 					currentLineLength = 0; // 当前行长度清零
 					currentLineMaxHeight = 0; // 当前行最大高度清零					
 				}
-
+				//非文档另立一行
+				if(currentContent is LayoutDocument && !(frontContent is LayoutDocument))
+				{
+					needsNewLine = true;
+					currentLineNumber++; // 控件换行了
+					currentY += currentLineMaxHeight; // 更新 Y 坐标
+					currentLineLength = 0; // 当前行长度清零
+					currentLineMaxHeight = 0; // 当前行最大高度清零	
+				}
 				if (!needsNewLine) // 如果不需要换行，则排在当前行的尾部
 				{
 					child.Arrange(new Rect(currentX, currentY, width, height));

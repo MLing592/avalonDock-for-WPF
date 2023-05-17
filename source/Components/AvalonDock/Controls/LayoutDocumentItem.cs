@@ -81,7 +81,7 @@ namespace AvalonDock.Controls
 		#region ChangeTabColorCommand 改变选项卡颜色
 
 		/// <summary><see cref="ChangeTabColorCommand"/> dependency property.</summary>
-		public static readonly DependencyProperty ChangeTabColorCommandProperty = DependencyProperty.Register(nameof(ChangeTabColorCommand), typeof(ICommand), typeof(LayoutItem),
+		public static readonly DependencyProperty ChangeTabColorCommandProperty = DependencyProperty.Register(nameof(ChangeTabColorCommand), typeof(ICommand), typeof(LayoutDocumentItem),
 				new FrameworkPropertyMetadata(null, OnChangeTabColorCommandChanged, CoerceChangeTabColorCommandValue));
 
 		/// <summary>Gets/sets the command to execute when user click the Pane close button.</summary>
@@ -170,7 +170,7 @@ namespace AvalonDock.Controls
 		#region FixCommand 固定选项卡
 
 		/// <summary><see cref="FixCommand"/> dependency property.</summary>
-		public static readonly DependencyProperty FixCommandProperty = DependencyProperty.Register(nameof(FixCommand), typeof(ICommand), typeof(LayoutItem),
+		public static readonly DependencyProperty FixCommandProperty = DependencyProperty.Register(nameof(FixCommand), typeof(ICommand), typeof(LayoutDocumentItem),
 				new FrameworkPropertyMetadata(null, OnFixCommandChanged, CoerceFixCommandValue));
 
 		/// <summary>Gets/sets the command to execute when user click the Pane close button.</summary>
@@ -207,22 +207,62 @@ namespace AvalonDock.Controls
 		{
 			bool newValue = !_document.IsFixed;
 			var pane = _document.FindParent<LayoutDocumentPane>();
-			var index = pane.IndexOfChild(_document);
-			var unfixedElements = pane.Children.Cast<LayoutDocument>().FirstOrDefault(x => !x.IsFixed);
-			//不-1时移动到元素前
-			var MinIndex = newValue ? pane.IndexOfChild(unfixedElements) : pane.IndexOfChild(unfixedElements) - 1;
-			//前后索引相同不会重新排列时
-			if (index == MinIndex)
+			int index = pane.IndexOfChild(_document);
+			int unfixedIndex = -1;
+			int finalIndex = pane.Children.Count - 1;
+			int lastfixedIndex = -1;
+
+			var unfixedElements = pane.Children.OfType<LayoutDocument>().FirstOrDefault(x => !x.IsFixed);
+			var lastfixedElements = pane.Children.OfType<LayoutDocument>().LastOrDefault(x => x.IsFixed);
+			
+			if (lastfixedElements != null) { lastfixedIndex = pane.IndexOfChild(lastfixedElements); }
+			if (unfixedElements != null)
 			{
-				//1.强制容器重排
-				//pane.RaiseChildrenTreeChanged();
-				//2.文档移动再移回
-				var final = pane.Children.Count - 1;
-				pane.MoveChild(index, final);
-				pane.MoveChild(final, index);
+				//不-1时移动到元素前
+				unfixedIndex = newValue ? pane.IndexOfChild(unfixedElements) : pane.IndexOfChild(unfixedElements) - 1;
+				//前后索引相同不会重新排列时
+				if (index == unfixedIndex)
+				{
+					//1.强制容器重排
+					//pane.RaiseChildrenTreeChanged();
+					//2.文档移动再移回
+					if(index == finalIndex) finalIndex= 0;
+					pane.MoveChild(index, finalIndex);
+					pane.MoveChild(finalIndex, index);
+				}
+				else
+				{
+					pane.MoveChild(index, unfixedIndex);
+				}
 			}
-			pane.MoveChild(index, MinIndex);
+			else
+			{
+				//全部固定则移动到最后
+				lastfixedIndex = Math.Min(finalIndex, Math.Max(0, lastfixedIndex));
+				if (index == lastfixedIndex)
+				{
+					lastfixedIndex = 0;
+					pane.MoveChild(index, lastfixedIndex);
+					pane.MoveChild(lastfixedIndex, index);
+				}
+				else
+				{
+					pane.MoveChild(index, lastfixedIndex);
+				}
+					
+			}
+			
 			_document.IsFixed = newValue;
+
+			////非LayoutDocument逆序排列且移到最前返回正序排列
+			//var unLayoutDocumentElements = pane.Children
+			//	.Where(x => !(x is LayoutDocument))
+			//	.OrderByDescending(p => pane.Children.IndexOf(p))
+			//	.ToArray();
+			//for (int i = 0; i < unLayoutDocumentElements.Count(); i++)
+			//{
+			//	pane.MoveChild(pane.IndexOfChild(unLayoutDocumentElements[i]), 0);
+			//}
 		}
 
 		#endregion FixCommand

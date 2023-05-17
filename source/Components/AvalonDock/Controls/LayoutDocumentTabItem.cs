@@ -33,7 +33,6 @@ namespace AvalonDock.Controls
 		private List<TabItem> _otherTabs = null;
 		private Rect _parentDocumentTabPanelScreenArea;
 		private DocumentPaneTabPanel _parentDocumentTabPanel;
-		private DocumentPaneTabWrapPanel _parentDocumentTabWrapPanel;
 		private bool _isMouseDown = false;
 		private Point _mouseDownPoint;
 		private bool _allowDrag = false;
@@ -161,15 +160,7 @@ namespace AvalonDock.Controls
 				var childrenList = container.Children.ToList();
 				containerPane.MoveChild(childrenList.IndexOf(Model), childrenList.IndexOf(targetModel));
 				Model.IsActive = true;
-				if(IsVS2022())
-				{
-					_parentDocumentTabWrapPanel?.UpdateLayout();
-				}
-				else
-				{
-					_parentDocumentTabPanel?.UpdateLayout();
-				}
-				
+				_parentDocumentTabPanel?.UpdateLayout();
 				UpdateDragDetails();
 			}
 		}
@@ -222,18 +213,11 @@ namespace AvalonDock.Controls
 
 		private void UpdateDragDetails()
 		{
-			if (IsVS2022())
-			{
-				_parentDocumentTabWrapPanel = this.FindLogicalAncestor<DocumentPaneTabWrapPanel>();
-				_parentDocumentTabPanelScreenArea = _parentDocumentTabWrapPanel.GetScreenArea();
-				_otherTabs = _parentDocumentTabWrapPanel.Children.Cast<TabItem>().Where(ch => ch.Visibility != Visibility.Collapsed).ToList();
-			}
-			else
-			{
-				_parentDocumentTabPanel = this.FindLogicalAncestor<DocumentPaneTabPanel>();
-				_parentDocumentTabPanelScreenArea = _parentDocumentTabPanel.GetScreenArea();
-				_otherTabs = _parentDocumentTabPanel.Children.Cast<TabItem>().Where(ch => ch.Visibility != Visibility.Collapsed).ToList();
-			}			
+
+			_parentDocumentTabPanel = this.FindLogicalAncestor<DocumentPaneTabPanel>();
+			_parentDocumentTabPanelScreenArea = _parentDocumentTabPanel.GetScreenArea();
+			_otherTabs = _parentDocumentTabPanel.Children.Cast<TabItem>().Where(ch => ch.Visibility != Visibility.Collapsed).ToList();
+					
 			var currentTabScreenArea = this.FindLogicalAncestor<TabItem>().GetScreenArea();
 			_otherTabsScreenArea = _otherTabs.Select(ti =>
 			{

@@ -11,9 +11,11 @@ using AvalonDock.Commands;
 using AvalonDock.Layout;
 using System;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Xml.Linq;
 
 namespace AvalonDock.Controls
 {
@@ -122,6 +124,49 @@ namespace AvalonDock.Controls
 		private void ExecuteAutoHideCommand(object parameter) => _anchorable?.Root?.Manager?.ExecuteAutoHideCommand(_anchorable);
 
 		#endregion AutoHideCommand
+
+		#region FixCommand 固定选项卡
+
+		/// <summary><see cref="FixCommand"/> dependency property.</summary>
+		public static readonly DependencyProperty FixCommandProperty = DependencyProperty.Register(nameof(FixCommand), typeof(ICommand), typeof(LayoutAnchorableItem),
+				new FrameworkPropertyMetadata(null, OnFixCommandChanged, CoerceFixCommandValue));
+
+		/// <summary>Gets/sets the command to execute when user click the Pane close button.</summary>
+		[Bindable(true), Description("Gets/sets the command to execute when user click the Pane command of change tab color ."), Category("Other")]
+		public ICommand FixCommand
+		{
+			get => (ICommand)GetValue(FixCommandProperty);
+			set => SetValue(FixCommandProperty, value);
+		}
+
+		/// <summary>Handles changes to the <see cref="FixCommand"/> property.</summary>
+		/// <summary>属性值更改时引发的回调函数 <see cref="FixCommand"/> property.</summary>
+		private static void OnFixCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+		{
+
+		}
+
+		/// <summary>Coerces the <see cref="FixCommand"/>  value.</summary>
+		/// <summary>用来强制限制属性值的范围或取值 <see cref="FixCommand"/>  value.</summary>
+		private static object CoerceFixCommandValue(DependencyObject d, object value) => value;
+
+		/// <summary>
+		/// 是否可以执行
+		/// </summary>
+		/// <param name="parameter"></param>
+		/// <returns></returns>
+		private bool CanExecuteFixCommand(object parameter) => _anchorable != null;
+
+		/// <summary>
+		/// 执行命令
+		/// </summary>
+		/// <param name="parameter"></param>
+		protected virtual void OnExecuteFixCommand(object parameter)
+		{
+
+		}
+
+		#endregion FixCommand
 
 		#region DockCommand
 

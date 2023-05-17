@@ -37,6 +37,7 @@ namespace AvalonDock.Layout
 		// BD: 17.08.2020 Remove that bodge and handle CanClose=false && CanHide=true in XAML
 		//private bool _canCloseValueBeforeInternalSet;
 		private bool _canMove = true;
+		private bool _isFixed = true;
 
 		#endregion fields
 
@@ -184,6 +185,17 @@ namespace AvalonDock.Layout
 		{
 			get => Parent != null && !(Parent is LayoutRoot);
 			set { if (value) Show(); else Hide(); }
+		}
+
+		public bool IsFixed
+		{
+			get => _isFixed;
+			set
+			{
+				if (value == _isFixed) return;
+				_isFixed = value;
+				RaisePropertyChanged(nameof(IsFixed));
+			}
 		}
 
 		#endregion Properties

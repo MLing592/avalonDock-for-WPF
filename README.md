@@ -212,5 +212,11 @@ to also theme standard elements, such as, button and textblock etc.
 - 6.修改逻辑，固定文档被添加到固定文档队列末尾
 - 7.预计添加固定文档与未固定文档永远分离，不可破坏
 
+## 2023-5-16
+
+- 1.修复Anchorable等其他控件到DocumentPane时的测量排列排序固定问题
+- 2.Anchorable添加iSFixed属性
+- 3.Anchorable强制固定，固定时与Document分行
+
 
 

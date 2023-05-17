@@ -267,7 +267,7 @@
                                     BorderBrush="{DynamicResource {x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveBackground}}"
                                     BorderThickness="0,0,0,2" />
                                 <!--  文档选项卡容器改为DocumentPaneTabWrapPanel  -->
-                                <avalonDockControls:DocumentPaneTabWrapPanel
+                                <avalonDockControls:DocumentPaneTabPanel
                                     x:Name="HeaderPanel"
                                     Grid.Row="0"
                                     Grid.Column="0"
@@ -2704,8 +2704,10 @@
                                                         ViewboxUnits="Absolute"
                                                         Viewport="0,0,4,4"
                                                         ViewportUnits="Absolute">
+                                                        <!--发现原来绑定语法，当拖拽成FolatingWindow时会报错，原来绑定语法如下，相比之下少了一个值转换器
+														<GeometryDrawing Brush="{Binding Fill, ElementName=DragHandleGeometryPlaceholder, Mode=OneWay, Converter={avalonDockConverters:NullToDoNothingConverter}}">-->
                                                         <DrawingBrush.Drawing>
-                                                            <GeometryDrawing Brush="{Binding Fill, ElementName=DragHandleGeometryPlaceholder, Mode=OneWay, Converter={avalonDockConverters:NullToDoNothingConverter}}">
+                                                            <GeometryDrawing Brush="{DynamicResource {x:Static reskeys:ResourceKeys.ToolWindowCaptionInactiveGrip}}">
                                                                 <GeometryDrawing.Geometry>
                                                                     <GeometryGroup>
                                                                         <GeometryGroup.Children>
