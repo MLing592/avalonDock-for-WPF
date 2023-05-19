@@ -10,11 +10,13 @@
 using AvalonDock.Commands;
 using AvalonDock.Layout;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Xml.Linq;
 
 namespace AvalonDock.Controls
@@ -88,42 +90,93 @@ namespace AvalonDock.Controls
 
 		#endregion HideCommand
 
-		#region AutoHideCommand 执行停靠/自动隐藏
+		#region ChangeTabColorCommand 改变选项卡颜色
 
-		/// <summary><see cref="AutoHideCommand"/> dependency property.</summary>
-		public static readonly DependencyProperty AutoHideCommandProperty = DependencyProperty.Register(nameof(AutoHideCommand), typeof(ICommand), typeof(LayoutAnchorableItem),
-				new FrameworkPropertyMetadata(null, OnAutoHideCommandChanged, CoerceAutoHideCommandValue));
+		/// <summary><see cref="ChangeTabColorCommand"/> dependency property.</summary>
+		public static readonly DependencyProperty ChangeTabColorCommandProperty = DependencyProperty.Register(nameof(ChangeTabColorCommand), typeof(ICommand), typeof(LayoutAnchorableItem),
+				new FrameworkPropertyMetadata(null, OnChangeTabColorCommandChanged, CoerceChangeTabColorCommandValue));
 
-		/// <summary>Gets/sets the command to execute when user click the auto hide button.</summary>
-		/// <remarks>By default this command toggles auto hide state for an anchorable.</remarks>
-		[Bindable(true), Description("Gets/sets the command to execute when user click the auto hide button."), Category("Other")]
-		public ICommand AutoHideCommand
+		/// <summary>Gets/sets the command to execute when user click the Pane close button.</summary>
+		[Bindable(true), Description("Gets/sets the command to execute when user click the Pane command of change tab color ."), Category("Other")]
+		public ICommand ChangeTabColorCommand
 		{
-			get => (ICommand)GetValue(AutoHideCommandProperty);
-			set => SetValue(AutoHideCommandProperty, value);
+			get => (ICommand)GetValue(ChangeTabColorCommandProperty);
+			set => SetValue(ChangeTabColorCommandProperty, value);
 		}
 
-		/// <summary>Handles changes to the <see cref="AutoHideCommand"/> property.</summary>
-		private static void OnAutoHideCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) => ((LayoutAnchorableItem)d).OnAutoHideCommandChanged(e);
-
-		/// <summary>Provides derived classes an opportunity to handle changes to the <see cref="AutoHideCommand"/> property.</summary>
-		protected virtual void OnAutoHideCommandChanged(DependencyPropertyChangedEventArgs e)
+		/// <summary>Handles changes to the <see cref="ChangeTabColorCommand"/> property.</summary>
+		/// <summary>属性值更改时引发的回调函数 <see cref="ChangeTabColorCommand"/> property.</summary>
+		private static void OnChangeTabColorCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
+
 		}
 
-		/// <summary>Coerces the <see cref="AutoHideCommand"/> value.</summary>
-		private static object CoerceAutoHideCommandValue(DependencyObject d, object value) => value;
+		/// <summary>Coerces the <see cref="ChangeTabColorCommand"/>  value.</summary>
+		/// <summary>用来强制限制属性值的范围或取值 <see cref="ChangeTabColorCommand"/>  value.</summary>
+		private static object CoerceChangeTabColorCommandValue(DependencyObject d, object value) => value;
 
-		private bool CanExecuteAutoHideCommand(object parameter)
+		/// <summary>
+		/// Can be executeed or not
+		/// 是否可以执行
+		/// </summary>
+		/// <param name="parameter"></param>
+		/// <returns></returns>
+		private bool CanExecuteChangeTabColorCommand(object parameter) => _anchorable != null;
+
+		/// <summary>
+		/// executive command
+		/// 执行命令
+		/// </summary>
+		/// <param name="parameter"></param>
+		protected virtual void ExecuteChangeTabColorCommand(object parameter)
 		{
-			if (LayoutElement == null) return false;
-			if (LayoutElement.FindParent<LayoutAnchorableFloatingWindow>() != null) return false;//is floating
-			return _anchorable.CanAutoHide;
+			//Get Root Manager
+			//获取根组件DockingManager
+			DockingManager dockingManager = this.LayoutElement?.Root.Manager;
+			if (dockingManager == null) return;
+
+			//Get parameter to brush
+			//转换brush
+			var brush = parameter as SolidColorBrush;
+			if (brush == null) return;
+
+			//"To retrieve the key value of the theme resources and replace the resource color, you need to modify 'DockingManager.Theme'.
+			//获取主题资源键值，更换资源颜色
+			var result = SearchResourceDict(dockingManager.Resources, brush);
+			if (!result) SearchResourceDict(Application.Current.Resources, brush);
 		}
 
-		private void ExecuteAutoHideCommand(object parameter) => _anchorable?.Root?.Manager?.ExecuteAutoHideCommand(_anchorable);
+		//"Search resource dictionary, with a default maximum search depth of 3."
+		//搜索资源字典，最大搜索深度默认为3
+		private bool SearchResourceDict(ResourceDictionary resourceDict, SolidColorBrush brush, int SearchDepth = 3)
+		{
+			Func<IEnumerable<ResourceDictionary>, int, bool> loopThroughDicts = null;
+			loopThroughDicts = (dicts, level) =>
+			{
+				if (level > SearchDepth) return false;
+				foreach (ResourceDictionary dict in dicts)
+				{
+					var leftKey = dict.Keys.OfType<ComponentResourceKey>().FirstOrDefault(k => k.ResourceId.ToString() == "DocumentWellTabUnselectedRectangleBackground");
+					var middleKey = dict.Keys.OfType<ComponentResourceKey>().FirstOrDefault(k => k.ResourceId.ToString() == "DocumentWellTabSelectedActiveBackground");
+					if (leftKey != null && middleKey != null)
+					{
+						dict[leftKey] = brush;
+						dict[middleKey] = brush;
+						return true;
+					}
 
-		#endregion AutoHideCommand
+					if (dict.MergedDictionaries.Count > 0)
+					{
+						return loopThroughDicts(dict.MergedDictionaries.OfType<ResourceDictionary>(), level + 1);
+					}
+				}
+				return false;
+			};
+			return loopThroughDicts(resourceDict.MergedDictionaries.OfType<ResourceDictionary>(), 1);
+		}
+
+
+		#endregion ChangeTabColorCommand
 
 		#region FixCommand 固定选项卡
 
@@ -132,7 +185,7 @@ namespace AvalonDock.Controls
 				new FrameworkPropertyMetadata(null, OnFixCommandChanged, CoerceFixCommandValue));
 
 		/// <summary>Gets/sets the command to execute when user click the Pane close button.</summary>
-		[Bindable(true), Description("Gets/sets the command to execute when user click the Pane command of change tab color ."), Category("Other")]
+		[Bindable(true), Description("Gets/sets the command to execute when user click the Document Tab command of fixed to sort ."), Category("Other")]
 		public ICommand FixCommand
 		{
 			get => (ICommand)GetValue(FixCommandProperty);
@@ -151,6 +204,7 @@ namespace AvalonDock.Controls
 		private static object CoerceFixCommandValue(DependencyObject d, object value) => value;
 
 		/// <summary>
+		/// Can be executeed or not
 		/// 是否可以执行
 		/// </summary>
 		/// <param name="parameter"></param>
@@ -158,6 +212,7 @@ namespace AvalonDock.Controls
 		private bool CanExecuteFixCommand(object parameter) => _anchorable != null;
 
 		/// <summary>
+		/// executive command
 		/// 执行命令
 		/// </summary>
 		/// <param name="parameter"></param>

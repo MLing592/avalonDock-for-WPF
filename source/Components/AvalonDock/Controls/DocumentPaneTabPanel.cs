@@ -22,7 +22,7 @@ namespace AvalonDock.Controls
 {
 	/// <summary>
 	/// Provides a panel that contains the TabItem Headers of the <see cref="LayoutDocumentPaneControl"/>.
-	/// 除VS2022外使用
+	/// Used except by VSs2022
 	/// </summary>
 	public class DocumentPaneTabOriginPanel : Panel
 	{
@@ -139,7 +139,8 @@ namespace AvalonDock.Controls
 	}
 
 
-	//VS2022使用
+	//used by VS2022
+	//VS2022使用的自定义WrapPanel
 	public class DocumentPaneTabPanel : WrapPanel
 	{
 		public DocumentPaneTabPanel() 
@@ -154,37 +155,45 @@ namespace AvalonDock.Controls
 
 		protected override Size MeasureOverride(Size constraint)
 		{
-			double currentLineLength = 0;                // 当前行已占用的宽度
-			double maxLineHeight = 0;                    // 所有行总计的高度
-			double currentLineMaxHeight = 0;             // 当前行最大高度
-			var infiniteConstraintHgt = new Size(constraint.Width, double.PositiveInfinity);   // 限制宽度，但允许无限高度的约束
+			double currentLineLength = 0;                
+			double maxLineHeight = 0;                    
+			double currentLineMaxHeight = 0;            
+			var infiniteConstraintHgt = new Size(constraint.Width, double.PositiveInfinity);   
 
-			// 遍历所有子元素 
+
 			foreach (UIElement child in InternalChildren)
 			{
 				bool needsNewLine = false;
+				// if this element isn"t visible,skip
 				// 如果该子元素不可见，则跳过
 				if (!child.IsVisible) { continue; }
 
+				// fixed LayoutDocument,new line
 				// 固定文档另立一行
 				var currentContent = (child as TabItem)?.Content;
 				var ine = Math.Max(Children.IndexOf(child) - 1, 0);
-				var frontContent = (Children[ine] as TabItem).Content;
+				var frontContent = (Children[ine] as TabItem)?.Content;
 				if ((currentContent is LayoutDocument current && frontContent is LayoutDocument front) && 
 					(current?.IsFixed == false && front?.IsFixed == true))
 				{
 					needsNewLine = true;
 				}
-				//非文档另立一行
-				if(currentContent is LayoutDocument && !(frontContent is LayoutDocument))
+
+				// not LayoutDocument,new line
+				// 非文档另立一行
+				if (currentContent is LayoutDocument && !(frontContent is LayoutDocument))
 				{
 					needsNewLine = true;
 				}
-				//元素累计宽度超出一行则换行
+
+				// element cumulative width exceeeds constraint.Width
+				// 元素累计宽度超出一行则换行
 				if (currentLineLength + child.DesiredSize.Width > constraint.Width)
 				{
 					needsNewLine = true;
 				}
+
+				// needs new line,update maxLineHeight,currentLineLength and currentLineMaxHeight
 				// 如果需要换行，则更新总高度、当前行最大高度和当前行宽度
 				if (needsNewLine)
 				{
@@ -192,15 +201,14 @@ namespace AvalonDock.Controls
 					currentLineLength = 0;
 					currentLineMaxHeight = 0;
 				}
-				// 测量子元素，使用允许无限高度的约束
-				child.Measure(infiniteConstraintHgt);
 
-				// 更新当前行宽度和最大高度
+				child.Measure(infiniteConstraintHgt);
 				var childDesiredSize = child.DesiredSize;
 				currentLineLength += childDesiredSize.Width;
 				currentLineMaxHeight = Math.Max(currentLineMaxHeight, childDesiredSize.Height);
 			}
 
+			// Calculate the total height to get the final size
 			// 将最后一行的最大高度加入总高度中，得到最终的尺寸大小
 			maxLineHeight += currentLineMaxHeight;
 			var finalSize = new Size(constraint.Width, Math.Min(maxLineHeight, constraint.Height));
@@ -210,16 +218,25 @@ namespace AvalonDock.Controls
 
 		protected override Size ArrangeOverride(Size finalSize)
 		{
-			var baseSize = base.ArrangeOverride(finalSize);//获取原生Wrappanel计算
+			// Get base method size
+			// 获取原生Wrappanel计算
+			var baseSize = base.ArrangeOverride(finalSize);
 			#region 自定义Wrappanel
-			double currentX = 0; // 当前控件将要布局的子元素的 X 轴坐标
-			double currentY = 0; // 当前控件将要布局的子元素的 Y 轴坐标
-			double currentLineLength = 0; // 当前行已有元素的总长度
-			double currentLineMaxHeight = 0; // 当前行的最大高度
-			int currentLineNumber = 0; // 当前行编号
+
+			// current element X-axis position
+			// 当前控件将要布局的子元素的 X 轴坐标
+			double currentX = 0;
+			//current element Y-axis position
+			// 当前控件将要布局的子元素的 Y 轴坐标
+			double currentY = 0; 
+			double currentLineLength = 0; 
+			double currentLineMaxHeight = 0; 
+			int currentLineNumber = 0; 
 			foreach (UIElement child in InternalChildren)
 			{
-				if (!child.IsVisible) { continue; } // 如果不需要重新排列，则继续处理下一个子元素
+				// if this element isn"t visible,skip
+				// 如果该子元素不可见，则跳过
+				if (!child.IsVisible) { continue; } 
 
 				double width = child.DesiredSize.Width;
 				double height = child.DesiredSize.Height;
@@ -227,43 +244,50 @@ namespace AvalonDock.Controls
 
 				var currentContent = (child as TabItem)?.Content;
 				var ine = Math.Max(Children.IndexOf(child) - 1, 0);
-				var frontContent = (Children[ine] as TabItem).Content;
-				//执行完LayoutDocumentItem的OnExecuteFixCommand方法后才开始MeasureOverride和ArrangeOverride
-				//判断当前是否到了固定与非固定分界点
-				//当固定/取消固定标签时，current为选中固定/取消固定的标签，front为index为0即也是选中固定/取消固定的标签
+				var frontContent = (Children[ine] as TabItem)?.Content;
+
+				//Boundary between fixed and non-fixed documents,new line
+				//固定与非固定文档的分界处换行
 				if ((currentContent is LayoutDocument current && frontContent is LayoutDocument front) &&
 					(current?.IsFixed == false && front?.IsFixed == true) ||
 					(currentLineLength + width > finalSize.Width))
 				{
 					needsNewLine = true;
-					currentLineNumber++; // 控件换行了
-					currentY += currentLineMaxHeight; // 更新 Y 坐标
-					currentLineLength = 0; // 当前行长度清零
-					currentLineMaxHeight = 0; // 当前行最大高度清零					
+					currentLineNumber++; 
+					currentY += currentLineMaxHeight; 
+					currentLineLength = 0; 
+					currentLineMaxHeight = 0; 					
 				}
-				//非文档另立一行
-				if(currentContent is LayoutDocument && !(frontContent is LayoutDocument))
+
+				// not LayoutDocument,new line
+				// 非文档另立一行
+				if (currentContent is LayoutDocument && !(frontContent is LayoutDocument))
 				{
 					needsNewLine = true;
-					currentLineNumber++; // 控件换行了
-					currentY += currentLineMaxHeight; // 更新 Y 坐标
-					currentLineLength = 0; // 当前行长度清零
-					currentLineMaxHeight = 0; // 当前行最大高度清零	
+					currentLineNumber++; 
+					currentY += currentLineMaxHeight; 
+					currentLineLength = 0; 
+					currentLineMaxHeight = 0; 
 				}
-				if (!needsNewLine) // 如果不需要换行，则排在当前行的尾部
+
+				// "If no line-break is needed, then it will be appended at the end of the current line."
+				// 如果不需要换行，则排在当前行的尾部
+				if (!needsNewLine) 
 				{
 					child.Arrange(new Rect(currentX, currentY, width, height));
 					currentX += width;
 					currentLineLength += width;
 					currentLineMaxHeight = Math.Max(currentLineMaxHeight, height);
 				}
-				else // 否则将子元素放到下一行的开头
+				// "Otherwise, the element will be placed at the beginning of the next line."
+				// 否则将子元素放到下一行的开头
+				else
 				{
-					child.Arrange(new Rect(0, currentY + currentLineMaxHeight, width, height)); // 这里 X 坐标直接设为 0 就行，因为肯定是左对齐的
+					child.Arrange(new Rect(0, currentY + currentLineMaxHeight, width, height));
 					currentX = width;
 					currentLineLength = width;
 					currentLineMaxHeight = height;
-					baseSize.Height += currentLineMaxHeight; //增加一行的高度
+					baseSize.Height += currentLineMaxHeight; 
 				}
 			}
 			#endregion
@@ -271,106 +295,6 @@ namespace AvalonDock.Controls
 
 		} 
 		
-	}
-
-	//测试使用
-	public class CustomWrapPanel : Panel
-	{
-		private List<bool> m_visibleList; // 保存子元素是否可见
-		private List<List<FrameworkElement>> m_rowList; // 每一行上的元素集合
-
-		public CustomWrapPanel()
-		{
-			m_visibleList = new List<bool>();
-			m_rowList = new List<List<FrameworkElement>>();
-		}
-
-		protected override Size MeasureOverride(Size availableSize)
-		{
-			m_visibleList.Clear();
-			m_rowList.Clear();
-
-			double totalWidth = 0;
-			int curRow = 0;
-			double curLineHeight = 0;
-
-			foreach (FrameworkElement child in Children)
-			{
-				// 获取子元素的期望大小，并将可视状态添加到列表中
-				child.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-				m_visibleList.Add(true);
-
-				// 如果当前行宽度加上该元素宽度已经超出最大宽度，则进入下一行
-				if (totalWidth + child.DesiredSize.Width > availableSize.Width)
-				{
-					// 如果存在行高，则记录该行中元素的总高度
-					if (curRow > 0)
-					{
-						//m_rowList[curRow - 1].ForEach(c => c.DesiredSize = new Size(c.DesiredSize.Width, curLineHeight));
-					}
-
-					// 进入下一行
-					curRow++;
-					totalWidth = 0;
-					curLineHeight = 0;
-				}
-
-				// 将元素添加到当前行中，并累加该行宽度
-				if (curRow == m_rowList.Count)
-				{
-					m_rowList.Add(new List<FrameworkElement>());
-				}
-				m_rowList[curRow].Add(child);
-				totalWidth += child.DesiredSize.Width;
-
-				// 如果该元素高度大于当前行高度，则更新当前行高度
-				double childHeight = child.DesiredSize.Height + child.Margin.Top + child.Margin.Bottom;
-				curLineHeight = Math.Max(curLineHeight, childHeight);
-			}
-
-			// 更新最后一行的高度
-			if (curRow > 0)
-			{
-				//m_rowList[curRow - 1].ForEach(c => c.DesiredSize = new Size(c.DesiredSize.Width, curLineHeight));
-			}
-
-			// 返回总大小，这里只考虑所有元素存在一个列中的情况，在实际排列中，将根据实际位置和大小计算布局
-			double desiredHeight = m_rowList.Count * curLineHeight;
-			return new Size(availableSize.Width, desiredHeight);
-		}
-
-		protected override Size ArrangeOverride(Size finalSize)
-		{
-			double curX = 0;
-			double curY = 0;
-			double curLineHeight = 0;
-
-			for (int i = 0; i < Children.Count; i++)
-			{
-				var child = Children[i] as FrameworkElement;
-
-				// 设置子元素位置
-				if (m_visibleList[i])
-				{
-					child.Arrange(new Rect(curX + child.Margin.Left, curY + child.Margin.Top,
-						child.DesiredSize.Width, child.DesiredSize.Height));
-
-					// 更新下一个元素的 x 和 y 坐标值，以及当前行高度
-					curX += child.DesiredSize.Width + child.Margin.Left + child.Margin.Right;
-					curLineHeight = Math.Max(curLineHeight, child.DesiredSize.Height + child.Margin.Top + child.Margin.Bottom);
-				}
-
-				// 如果该元素是该行最后一个，则进入下一行
-				if (i == Children.Count - 1 || curX + Children[i + 1].DesiredSize.Width > finalSize.Width)
-				{
-					curX = 0;
-					curY += curLineHeight;
-					curLineHeight = 0;
-				}
-			}
-
-			return finalSize;
-		}
 	}
 
 

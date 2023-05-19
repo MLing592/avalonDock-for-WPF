@@ -13,6 +13,7 @@ using AvalonDock.Themes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Drawing;
 using System.Linq;
 using System.Security.Policy;
 using System.Windows;
@@ -104,6 +105,7 @@ namespace AvalonDock.Controls
 		private static object CoerceChangeTabColorCommandValue(DependencyObject d, object value) => value;
 
 		/// <summary>
+		/// Can be executeed or not
 		/// 是否可以执行
 		/// </summary>
 		/// <param name="parameter"></param>
@@ -111,25 +113,36 @@ namespace AvalonDock.Controls
 		private bool CanExecuteChangeTabColorCommand(object parameter) => _document != null;
 
 		/// <summary>
+		/// executive command
 		/// 执行命令
 		/// </summary>
 		/// <param name="parameter"></param>
 		protected virtual void ExecuteChangeTabColorCommand(object parameter)
 		{
+			//Get Root Manager
 			//获取根组件DockingManager
 			DockingManager dockingManager = this.LayoutElement?.Root.Manager;
 			if (dockingManager == null) return;
 
+			//Get parameter to brush
 			//转换brush
 			var brush = parameter as SolidColorBrush;
 			if (brush == null) return;
 
-			//更换资源颜色
-			var resourceDict = dockingManager.Resources;
-			Action<IEnumerable<ResourceDictionary>,int> loopThroughDicts = null;
-			loopThroughDicts = (dicts,level) =>
+			//"To retrieve the key value of the theme resources and replace the resource color, you need to modify 'DockingManager.Theme'.
+			//获取主题资源键值，更换资源颜色
+			var result = SearchResourceDict(dockingManager.Resources, brush);
+			if(!result) SearchResourceDict(Application.Current.Resources, brush);
+		}
+
+		//"Search resource dictionary, with a default maximum search depth of 3."
+		//搜索资源字典，最大搜索深度默认为3
+		private bool SearchResourceDict(ResourceDictionary resourceDict,SolidColorBrush brush,int SearchDepth = 3)
+		{
+			Func<IEnumerable<ResourceDictionary>, int,bool> loopThroughDicts = null;
+			loopThroughDicts = (dicts, level) =>
 			{
-				if (level > 3) return;
+				if (level > SearchDepth) return false;
 				foreach (ResourceDictionary dict in dicts)
 				{
 					var leftKey = dict.Keys.OfType<ComponentResourceKey>().FirstOrDefault(k => k.ResourceId.ToString() == "DocumentWellTabUnselectedRectangleBackground");
@@ -138,30 +151,17 @@ namespace AvalonDock.Controls
 					{
 						dict[leftKey] = brush;
 						dict[middleKey] = brush;
-						return;
+						return true;
 					}
 
 					if (dict.MergedDictionaries.Count > 0)
 					{
-						loopThroughDicts(dict.MergedDictionaries.OfType<ResourceDictionary>(),level +1);
+						return loopThroughDicts(dict.MergedDictionaries.OfType<ResourceDictionary>(), level + 1);
 					}
 				}
+				return false;
 			};
-			loopThroughDicts(resourceDict.MergedDictionaries.OfType<ResourceDictionary>(),1);
-
-			// 触发刷新操作
-			//dockingManager.ApplyTemplate();
-			//dockingManager.UpdateLayout();
-
-			//根据关联的TabItem修改属性，但不适合此种情况
-			//if (parameter is SolidColorBrush colorBrush)
-			//{
-			//	LayoutDocument Pane = this.LayoutElement as LayoutDocument;
-			//	if (Pane != null)
-			//	{
-			//		Pane.TabItem.Background = colorBrush;
-			//	}
-			//}
+			return loopThroughDicts(resourceDict.MergedDictionaries.OfType<ResourceDictionary>(), 1);
 		}
 
 
@@ -174,7 +174,7 @@ namespace AvalonDock.Controls
 				new FrameworkPropertyMetadata(null, OnFixCommandChanged, CoerceFixCommandValue));
 
 		/// <summary>Gets/sets the command to execute when user click the Pane close button.</summary>
-		[Bindable(true), Description("Gets/sets the command to execute when user click the Pane command of change tab color ."), Category("Other")]
+		[Bindable(true), Description("Gets/sets the command to execute when user click the Document Tab command of fixed to sort ."), Category("Other")]
 		public ICommand FixCommand
 		{
 			get => (ICommand)GetValue(FixCommandProperty);
@@ -193,6 +193,7 @@ namespace AvalonDock.Controls
 		private static object CoerceFixCommandValue(DependencyObject d, object value) => value;
 
 		/// <summary>
+		/// Can be executeed or not
 		/// 是否可以执行
 		/// </summary>
 		/// <param name="parameter"></param>
@@ -200,6 +201,7 @@ namespace AvalonDock.Controls
 		private bool CanExecuteFixCommand(object parameter) => _document != null;
 
 		/// <summary>
+		/// executive command
 		/// 执行命令
 		/// </summary>
 		/// <param name="parameter"></param>

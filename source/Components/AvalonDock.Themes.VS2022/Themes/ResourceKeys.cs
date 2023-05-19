@@ -54,12 +54,16 @@ namespace AvalonDock.Themes.VS2022.Themes
 		// Document Well : Tab
 		// Selected Document Highlight Header Top color (AccentColor)
 
-		#region 新增Add
-		//文档被Hover时，Dark下不改变背景色，使用同色，但Light下需要改变
+		#region New Color 新增颜色
+
+		// "When the document is being hovered over, there will be no change in background color on Dark mode, and it will use the same color. However, on Light mode, the background color needs to be changed."
+		// 文档被Hover时，Dark下不改变背景色，使用同色，但Light下需要改变
 		public static readonly ComponentResourceKey DocumentWellTabUnselectedHoveredBackgroundColor = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabUnselectedHoveredBackgroundColor");
-		//文档未被选中时，左侧矩形条颜色
+		// "The color of the left rectangle bar when the document is not selected."
+		// 文档未被选中时，左侧矩形条颜色
 		public static readonly ComponentResourceKey DocumentWellTabUnselectedRectangleBackground = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabUnselectedRectangleBackground");
-		//设置选项卡的背景色对应的颜色，菜单展示需要设置的颜色，
+		// The color for the background of the tab，change document tab color's key
+		// 设置选项卡的背景色对应的颜色，菜单展示需要设置的颜色
 		public static readonly ComponentResourceKey DocumentWellTabBackground2E2E2E = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabBackground2E2E2E");//无
 		public static readonly ComponentResourceKey DocumentWellTabBackground9183EE = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabBackground9183EE");//淡紫色
 		public static readonly ComponentResourceKey DocumentWellTabBackgroundD0B132 = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabBackgroundD0B132");//金色
@@ -77,10 +81,12 @@ namespace AvalonDock.Themes.VS2022.Themes
 		public static readonly ComponentResourceKey DocumentWellTabBackground946A5B = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabBackground946A5B");//深棕色
 		public static readonly ComponentResourceKey DocumentWellTabBackground6B8EC7 = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabBackground6B8EC7");//蓝色
 		public static readonly ComponentResourceKey DocumentWellTabBackgroundE0A2A4 = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabBackgroundE0A2A4");//粉色
-		//设置选项卡菜单的背景色
+		// MenuItem's background and foreground
+		// 设置选项卡菜单的背景色
 		public static readonly ComponentResourceKey DocumentContextMenuBackground = new ComponentResourceKey(typeof(ResourceKeys), "DocumentContextMenuBackground");//背景色
 		public static readonly ComponentResourceKey DocumentContextMenuForeground = new ComponentResourceKey(typeof(ResourceKeys), "DocumentContextMenuForeground");//前景色
-		//设置文选项卡固定按钮固定未激活下颜色
+		// document tab fix button glyph color when it's nonactive
+		// 设置选项卡固定按钮固定未激活下颜色
 		public static readonly ComponentResourceKey DocumentWellTabButtonFixedGlyph = new ComponentResourceKey(typeof(ResourceKeys), "DocumentWellTabButtonFixedGlyph");//前景色
 
 		#endregion

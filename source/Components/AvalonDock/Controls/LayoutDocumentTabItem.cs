@@ -118,6 +118,7 @@ namespace AvalonDock.Controls
 			_isMouseDown = true;
 		}
 
+		//"Rewrite the method to enable right-click selection."
 		//重写方法，使其右键选中
 		protected override void OnMouseRightButtonDown(System.Windows.Input.MouseButtonEventArgs e)
 		{
@@ -203,13 +204,6 @@ namespace AvalonDock.Controls
 
 		#region Private Methods
 
-		private bool IsVS2022()
-		{
-			bool result = false;
-			var manager = this.LayoutItem?.LayoutElement?.Root.Manager;
-			if (manager != null && manager.Theme.ToString().Contains("VS2022")) { result = true; }
-			return result;
-		}
 
 		private void UpdateDragDetails()
 		{
