@@ -14,7 +14,7 @@
 
 # Feature Added - 基于Dirkster.AvalonDock的VS2013主题修改而来的VS2022主题
 
-如图所示案例为/Test Projects/VS2022Test，全图为VS2022，红框内为Test程序，进行对比。
+### VS2022Test
 
 <table width="100%">
    <tr>
@@ -35,6 +35,8 @@
    </tr>
 </table>
 
+### Aka/DockingDemo
+
 <table width="100%">
    <tr>
       <td>theme</td>
@@ -53,6 +55,8 @@
       <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/development/AkaStudio-2022-Blue.png" width="400"></td>
    </tr>
 </table>
+
+### VS2022Test
 
 <table width="100%">
    <tr>
