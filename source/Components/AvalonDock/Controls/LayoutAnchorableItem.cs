@@ -90,6 +90,37 @@ namespace AvalonDock.Controls
 
 		#endregion HideCommand
 
+		#region HideCommand 隐藏
+
+		/// <summary><see cref="AutoHideCommand"/> dependency property.</summary>
+		public static readonly DependencyProperty AutoHideCommandProperty = DependencyProperty.Register(nameof(AutoHideCommand), typeof(ICommand), typeof(LayoutAnchorableItem),
+				new FrameworkPropertyMetadata(null, OnAutoHideCommandChanged, CoerceAutoHideCommandValue));
+
+		/// <summary>Gets/sets the the command to execute when an anchorable is hidden.</summary>
+		[Bindable(true), Description("Gets/sets the the command to execute when an anchorable is hidden."), Category("Other")]
+		public ICommand AutoHideCommand
+		{
+			get => (ICommand)GetValue(AutoHideCommandProperty);
+			set => SetValue(AutoHideCommandProperty, value);
+		}
+
+		/// <summary>Handles changes to the <see cref="AutoHideCommand"/> property.</summary>
+		private static void OnAutoHideCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) => ((LayoutAnchorableItem)d).OnAutoHideCommandChanged(e);
+
+		/// <summary>Provides derived classes an opportunity to handle changes to the <see cref="HideCommand"/> property.</summary>
+		protected virtual void OnAutoHideCommandChanged(DependencyPropertyChangedEventArgs e)
+		{
+		}
+
+		/// <summary>Coerces the <see cref="HideCommand"/> value.</summary>
+		private static object CoerceAutoHideCommandValue(DependencyObject d, object value) => value;
+
+		private bool CanExecuteAutoHideCommand(object parameter) => LayoutElement != null && _anchorable.CanHide;
+
+		private void ExecuteAutoHideCommand(object parameter) => _anchorable?.Root?.Manager?.ExecuteHideCommand(_anchorable);
+
+		#endregion HideCommand
+
 		#region ChangeTabColorCommand 改变选项卡颜色
 
 		/// <summary><see cref="ChangeTabColorCommand"/> dependency property.</summary>

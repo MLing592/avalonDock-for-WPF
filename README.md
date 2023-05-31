@@ -37,6 +37,25 @@
 
 <table width="100%">
    <tr>
+      <td>theme</td>
+      <td>display</td>
+   </tr>
+   <tr>
+      <td>Dark</td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/development/AkaStudio-2022-Dark.png" width="400"></td>
+   </tr>
+   <tr>
+      <td>Light</td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/development/AkaStudio-2022-Light.png" width="400"></td>
+   </tr>
+   <tr>
+      <td>Blue</td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/development/AkaStudio-2022-Blue.png" width="400"></td>
+   </tr>
+</table>
+
+<table width="100%">
+   <tr>
       <td>color</td>
       <td>Dark</td>
       <td>Light</td>

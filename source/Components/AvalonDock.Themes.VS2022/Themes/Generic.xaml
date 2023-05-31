@@ -701,7 +701,11 @@
                                             Viewport="0,0,4,4"
                                             ViewportUnits="Absolute">
                                             <DrawingBrush.Drawing>
-                                                <GeometryDrawing Brush="{Binding Fill, ElementName=DragHandleGeometryPlaceholder, Mode=OneWay, Converter={avalonDockConverters:NullToDoNothingConverter}}">
+                                                <!--
+                                                    The original binding syntax will report an error when it is dragged into FolatingWindow.
+                                                -->
+                                                <!--  发现原来绑定语法，当拖拽成FolatingWindow时会报错，原来绑定语法如下，相比之下少了一个值转换器  -->
+                                                <GeometryDrawing Brush="{DynamicResource {x:Static reskeys:ResourceKeys.ToolWindowCaptionInactiveGrip}}">
                                                     <GeometryDrawing.Geometry>
                                                         <GeometryGroup>
                                                             <GeometryGroup.Children>
@@ -2704,6 +2708,9 @@
                                                         ViewboxUnits="Absolute"
                                                         Viewport="0,0,4,4"
                                                         ViewportUnits="Absolute">
+                                                        <!--
+                                                            The original binding syntax will report an error when it is dragged into FolatingWindow.
+                                                        -->
                                                         <!--发现原来绑定语法，当拖拽成FolatingWindow时会报错，原来绑定语法如下，相比之下少了一个值转换器
 														<GeometryDrawing Brush="{Binding Fill, ElementName=DragHandleGeometryPlaceholder, Mode=OneWay, Converter={avalonDockConverters:NullToDoNothingConverter}}">-->
                                                         <DrawingBrush.Drawing>

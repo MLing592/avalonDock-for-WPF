@@ -169,31 +169,31 @@
         options:Freeze="true"
         Color="#FFFFFF" />
 
-	<!--  Document Well : Tab  -->
-	<!--  Selected Document Highlight Header Top color (AccentColor)  -->
+    <!--  Document Well : Tab  -->
+    <!--  Selected Document Highlight Header Top color (AccentColor)  -->
 
-	<!--  DocumentWellTabUnselectedHoveredBackgroundColor 文档选项卡未选中鼠标放到选项卡时除左侧矩形条外背景色  -->
-	<SolidColorBrush
+    <!--  DocumentWellTabUnselectedHoveredBackgroundColor 文档选项卡未选中鼠标放到选项卡时除左侧矩形条外背景色  -->
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedHoveredBackgroundColor}"
         options:Freeze="true"
         Color="#006CBE" />
-	<!--
+    <!--
         "The color of the rectangular bar on the left side of the document needs to be changed when change tab color command."
         文档左方矩形条颜色，使用，改变选项卡颜色时需要改变这个颜色
     -->
-	<SolidColorBrush
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabUnselectedRectangleBackground}"
         options:Freeze="true"
         Color="#006CBE" />
-	<!--
+    <!--
         "The background color during selection needs to be changed when  change tab color command."
         选中时背景色，使用，改变选项卡颜色时需要改变这个颜色
     -->
-	<SolidColorBrush
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveBackground}"
         options:Freeze="true"
         Color="#006CBE" />
-	<!--  DocumentWellTabSelectedActiveText 选中时文字颜色，使用  -->
+    <!--  DocumentWellTabSelectedActiveText 选中时文字颜色，使用  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabSelectedActiveText}"
         options:Freeze="true"
@@ -224,30 +224,30 @@
         options:Freeze="true"
         Color="#FFFFFF" />
 
-	<!--  Document Well : Tab : X Button Foreground color for selected document  -->
-	<!--  DocumentWellTabButtonSelectedActiveGlyph 文档窗口 按钮颜色  -->
-	<SolidColorBrush
+    <!--  Document Well : Tab : X Button Foreground color for selected document  -->
+    <!--  DocumentWellTabButtonSelectedActiveGlyph 文档窗口 按钮颜色  -->
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonSelectedActiveGlyph}"
         options:Freeze="true"
         Color="#FFFFFF" />
-	<!--
+    <!--
         "Fixed and closed color on the right side of the document button during selection and activation"
         为了区别开以前得颜色,文档右侧固定与退出选中并激活时的颜色
     -->
-	<SolidColorBrush
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonSelectedActiveGlyph2}"
         options:Freeze="true"
         Color="#000000" />
-	<!--
+    <!--
         "Set the color of the fixed button on the tab when it is not activated."
         设置文选项卡固定按钮固定未激活下颜色
     -->
-	<SolidColorBrush
+    <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonFixedGlyph}"
         options:Freeze="true"
         Color="#000000" />
 
-	<!--  AccentColor  -->
+    <!--  AccentColor  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonSelectedActiveHoveredBackground}"
         options:Freeze="true"

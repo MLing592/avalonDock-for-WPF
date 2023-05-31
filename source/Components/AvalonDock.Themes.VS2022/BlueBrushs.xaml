@@ -226,8 +226,8 @@
         options:Freeze="true"
         Color="#000000" />
 
-	<!--  Document Well : Tab : X Button Foreground color for selected document  -->
-	<!--  DocumentWellTabButtonSelectedActiveGlyph 文档窗口 按钮颜色  -->
+    <!--  Document Well : Tab : X Button Foreground color for selected document  -->
+    <!--  DocumentWellTabButtonSelectedActiveGlyph 文档窗口 按钮颜色  -->
     <SolidColorBrush
         x:Key="{x:Static reskeys:ResourceKeys.DocumentWellTabButtonSelectedActiveGlyph}"
         options:Freeze="true"
