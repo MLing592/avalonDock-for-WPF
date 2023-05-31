@@ -238,4 +238,10 @@ to also theme standard elements, such as, button and textblock etc.
 - 3.Anchorable强制固定，固定时与Document分行
 
 
+## 2023-5-31
+
+- 1.合并akastudio项目
+- 2.修改部分颜色
+- 3.待解决：序列化和反序列化布局添加新增信息
+
 
