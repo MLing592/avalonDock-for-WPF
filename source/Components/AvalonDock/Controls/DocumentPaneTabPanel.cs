@@ -146,10 +146,39 @@ namespace AvalonDock.Controls
 		public DocumentPaneTabPanel() 
 		{
 			this.FlowDirection = System.Windows.FlowDirection.LeftToRight;
+			this.Loaded += DocumentPaneTabPanel_Loaded;
+		}
+
+		private void DocumentPaneTabPanel_Loaded(object sender, RoutedEventArgs e)
+		{
+			//寻找documentPane
+			var pane = (this.Children.OfType<TabItem>().FirstOrDefault()?.Content as LayoutDocument)?.FindParent<LayoutDocumentPane>();
+			//LayoutDocumen is arranged in reverse order by fixed elements and moved to the front to return to positive order.
+			//LayoutDocumen被固定的元素逆序排列且移到最前返回正序排列
+			var LayoutDocumentElements = pane.Children.OfType<LayoutDocument>()
+				.Where(x=>x.IsFixed)
+				.OrderByDescending(p => pane.Children.IndexOf(p))
+				.ToArray();
+			for (int i = 0; i < LayoutDocumentElements.Count(); i++)
+			{
+				pane.MoveChild(pane.IndexOfChild(LayoutDocumentElements[i]), 0);
+			}
+			//Non-LayoutDocument is arranged in reverse order and moved to the front to return to positive order.
+			//非LayoutDocument逆序排列且移到最前返回正序排列
+			var unLayoutDocumentElements = pane.Children
+				.Where(x => !(x is LayoutDocument))
+				.OrderByDescending(p => pane.Children.IndexOf(p))
+				.ToArray();
+			for (int i = 0; i < unLayoutDocumentElements.Count(); i++)
+			{
+				pane.MoveChild(pane.IndexOfChild(unLayoutDocumentElements[i]), 0);
+			}
 		}
 
 		protected override void OnVisualChildrenChanged(DependencyObject visualAdded, DependencyObject visualRemoved)
 		{
+			//During initialization, an element is added, and the current element is visualAdded. When an element is moved, the current element is visualRemoved.
+			//初始化时为添加元素，当前元素为visualAdded，移动元素时，当前元素为visualRemoved
 			base.OnVisualChildrenChanged(visualAdded, visualRemoved);
 		}
 
