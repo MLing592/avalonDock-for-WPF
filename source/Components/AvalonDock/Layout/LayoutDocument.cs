@@ -99,7 +99,7 @@ namespace AvalonDock.Layout
 			base.WriteXml(writer);
 			if (!string.IsNullOrWhiteSpace(Description)) writer.WriteAttributeString(nameof(Description), Description);
 			if (!CanMove) writer.WriteAttributeString(nameof(CanMove), CanMove.ToString());
-			writer.WriteAttributeString(nameof(IsFixed), IsFixed.ToString());
+			if(IsFixed) writer.WriteAttributeString(nameof(IsFixed), IsFixed.ToString());
 		}
 
 		/// <inheritdoc />

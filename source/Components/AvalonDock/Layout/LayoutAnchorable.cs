@@ -290,6 +290,7 @@ namespace AvalonDock.Layout
 				writer.WriteAttributeString(nameof(CanDockAsTabbedDocument), CanDockAsTabbedDocument.ToString(CultureInfo.InvariantCulture));
 			if (!CanMove)
 				writer.WriteAttributeString(nameof(CanMove), CanMove.ToString());
+			if (IsFixed)
 				writer.WriteAttributeString(nameof(IsFixed), IsFixed.ToString());
 			base.WriteXml(writer);
 		}
