@@ -266,6 +266,8 @@ namespace AvalonDock.Layout
 				CanDockAsTabbedDocument = bool.Parse(reader.Value);
 			if (reader.MoveToAttribute(nameof(CanMove)))
 				CanMove = bool.Parse(reader.Value);
+			if (reader.MoveToAttribute(nameof(IsFixed)))
+				IsFixed = bool.Parse(reader.Value);
 			base.ReadXml(reader);
 		}
 
@@ -288,6 +290,7 @@ namespace AvalonDock.Layout
 				writer.WriteAttributeString(nameof(CanDockAsTabbedDocument), CanDockAsTabbedDocument.ToString(CultureInfo.InvariantCulture));
 			if (!CanMove)
 				writer.WriteAttributeString(nameof(CanMove), CanMove.ToString());
+				writer.WriteAttributeString(nameof(IsFixed), IsFixed.ToString());
 			base.WriteXml(writer);
 		}
 

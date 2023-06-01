@@ -99,6 +99,7 @@ namespace AvalonDock.Layout
 			base.WriteXml(writer);
 			if (!string.IsNullOrWhiteSpace(Description)) writer.WriteAttributeString(nameof(Description), Description);
 			if (!CanMove) writer.WriteAttributeString(nameof(CanMove), CanMove.ToString());
+			writer.WriteAttributeString(nameof(IsFixed), IsFixed.ToString());
 		}
 
 		/// <inheritdoc />
@@ -106,6 +107,7 @@ namespace AvalonDock.Layout
 		{
 			if (reader.MoveToAttribute(nameof(Description))) Description = reader.Value;
 			if (reader.MoveToAttribute(nameof(CanMove))) CanMove = bool.Parse(reader.Value);
+			if (reader.MoveToAttribute(nameof(IsFixed))) IsFixed = bool.Parse(reader.Value);
 			base.ReadXml(reader);
 		}
 

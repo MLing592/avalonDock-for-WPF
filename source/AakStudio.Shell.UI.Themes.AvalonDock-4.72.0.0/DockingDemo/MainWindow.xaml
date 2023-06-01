@@ -10,6 +10,8 @@
     Title="MainWindow"
     Width="1280"
     Height="720"
+	Loaded="Window_Loaded"
+	Closing="Window_Closing"
     aakthemes:GlowWindowAttach.GlowBrush="{DynamicResource {x:Static aakthemes:ResourceKeys.FloatingDocumentWindowBorder}}"
     aakthemes:GlowWindowAttach.NonActiveGlowBrush="{DynamicResource {x:Static aakthemes:ResourceKeys.FloatingDocumentWindowBorderInactive}}"
     BorderThickness="0"
@@ -145,19 +147,19 @@
                     </LayoutDocumentPaneGroup>
                     <LayoutAnchorablePaneGroup DockWidth="150" Orientation="Vertical">
                         <LayoutAnchorablePane>
-                            <LayoutAnchorable Title="Tool 1" CanShowOnHover="True" />
-                            <LayoutAnchorable Title="Tool 2" CanShowOnHover="True" />
+                            <LayoutAnchorable Title="Tool 1" CanShowOnHover="True" ContentId="tool1"/>
+							<LayoutAnchorable Title="Tool 2" CanShowOnHover="True" ContentId="tool2"/>
                         </LayoutAnchorablePane>
                         <LayoutAnchorablePane>
-                            <LayoutAnchorable Title="Tool 3" />
-                            <LayoutAnchorable Title="Tool 4" />
+							<LayoutAnchorable Title="Tool 3" ContentId="tool3"/>
+							<LayoutAnchorable Title="Tool 4" ContentId="tool4"/>
                         </LayoutAnchorablePane>
                     </LayoutAnchorablePaneGroup>
                 </LayoutPanel>
                 <LayoutRoot.LeftSide>
                     <LayoutAnchorSide>
                         <LayoutAnchorGroup>
-                            <LayoutAnchorable Title="Autohidden Content" />
+							<LayoutAnchorable Title="Autohidden Content" ContentId="tool5"/>
                         </LayoutAnchorGroup>
                     </LayoutAnchorSide>
                 </LayoutRoot.LeftSide>
