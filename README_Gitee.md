@@ -248,4 +248,16 @@ to also theme standard elements, such as, button and textblock etc.
 - 2.修改部分颜色
 - 3.待解决：序列化和反序列化布局添加新增信息
 
+## 2023-6-5
+
+- 1.解决反序列化IsFixed问题：
+- 1.1 反序列化时读取xaml文件加载的对应contentId的对象，拿到属性，不应该拿到isFixed等属性。
+- 1.2 若布局以xaml文件为准，则在LayoutSerializer.FixupLayout()方法中，则取消注释以下代码，默认以反序列化文件为准，即注释以下代码
+
+```C#
+   //lcToFix.IsFixed = previousDocument.IsFixed;
+   //lcToFix.IsFixed = previousAchorable.IsFixed;
+```
+
+
 
