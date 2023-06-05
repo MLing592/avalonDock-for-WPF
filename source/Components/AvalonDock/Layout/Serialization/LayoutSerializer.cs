@@ -105,7 +105,7 @@ namespace AvalonDock.Layout.Serialization
 				{
 					/* 如果不存在LayoutSerializationCallback委托，但存在先前的Anchorable窗格，则加载其内容 */
 					// No Callback but previous anchoreable available -> load content from previous document
-					lcToFix.IsFixed = previousAchorable.IsFixed;
+					//lcToFix.IsFixed = previousAchorable.IsFixed;
 					lcToFix.Content = previousAchorable.Content;
 					lcToFix.IconSource = previousAchorable.IconSource;
 				}
@@ -137,7 +137,7 @@ namespace AvalonDock.Layout.Serialization
 					lcToFix.Close();
 				else
 				{   // No Callback but previous document available -> load content from previous document
-					lcToFix.IsFixed = previousDocument.IsFixed;
+					//lcToFix.IsFixed = previousDocument.IsFixed;
 					lcToFix.Content = previousDocument.Content;
 					lcToFix.IconSource = previousDocument.IconSource;
 				}

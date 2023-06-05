@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
+using System.Xml;
 using System.Xml.Serialization;
 using AakStudio.Shell.UI.Themes.AvalonDock;
+using AvalonDock;
 using AvalonDock.Layout.Serialization;
 using AvalonDock.Themes;
 
@@ -38,18 +41,16 @@ public partial class MainWindow
 	string fileName = "layout.xml";
 	private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
 	{
-		using (StringWriter fs = new StringWriter())
+		using (TextWriter writer = new StreamWriter(fileName, false, Encoding.UTF8))
 		{
 			XmlLayoutSerializer xmlLayout = new XmlLayoutSerializer(dockingManager);
-			xmlLayout.Serialize(fs);
-			xmlLayoutString = fs.ToString();
-            File.WriteAllText(fileName, xmlLayout);
+			XmlWriterSettings settings = new XmlWriterSettings();
+			settings.Encoding = Encoding.UTF8;
+			XmlWriter xmlWriter = XmlWriter.Create(writer, settings);
+			xmlLayout.Serialize(xmlWriter);
+			xmlWriter.Close();
+			writer.Close();
 		}
-		// var serializer = new XmlLayoutSerializer(dockingManager);
-		// using (var stream = new FileStream(filename, FileMode.OpenOrCreate))
-		// {
-		// 	serializer.Serialize(stream);
-		// }
 	}
 
 	private void Window_Loaded(object sender, RoutedEventArgs e)
