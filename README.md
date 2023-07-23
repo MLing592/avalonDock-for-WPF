@@ -49,7 +49,7 @@
    </tr>
    <tr>
       <td>Blue</td>
-      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/development/AkaStudio-2022-Blue.png" width="400"></td>
+      <td><img src="./AkaStudio-2022-Blue.png" width="400"></td>
    </tr>
 </table>
 
