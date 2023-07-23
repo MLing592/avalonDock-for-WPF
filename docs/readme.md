@@ -1,3 +1,5 @@
+<a>English</a> -/
+<a href="./readme-zh_CN.md">简体中文</a> -
 | Downloads                                                                                                                                               | NuGet Packages
 | :------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------
 | [![NuGet](https://img.shields.io/nuget/dt/Dirkster.AvalonDock.svg)](http://nuget.org/packages/Dirkster.AvalonDock)                                      | [Dirkster.AvalonDock](http://nuget.org/packages/Dirkster.AvalonDock)
@@ -65,103 +67,103 @@
       <td>Blue</td>
    </tr>
    <tr>
-      <td>无</td>
+      <td>None</td>
       <td><img src="../Picture/VS2022-Dark-无.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-无.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-无.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>淡紫色</td>
+      <td>Lavender</td>
       <td><img src="../Picture/VS2022-Dark-淡紫色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-淡紫色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-淡紫色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>金色</td>
+      <td>Gold</td>
       <td><img src="../Picture/VS2022-Dark-金色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-金色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-金色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>蓝绿色</td>
+      <td>Cyan</td>
       <td><img src="../Picture/VS2022-Dark-蓝绿色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-蓝绿色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-蓝绿色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>绛紫色</td>
+      <td>Burgundy</td>
       <td><img src="../Picture/VS2022-Dark-绛紫色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-绛紫色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-绛紫色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>绿色</td>
+      <td>Green</td>
       <td><img src="../Picture/VS2022-Dark-绿色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-绿色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-绿色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>棕色</td>
+      <td>Brown</td>
       <td><img src="../Picture/VS2022-Dark-棕色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-棕色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-棕色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>亮蓝色</td>
+      <td>Royal Blue</td>
       <td><img src="../Picture/VS2022-Dark-亮蓝色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-亮蓝色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-亮蓝色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>南瓜色</td>
+      <td>Pumpkin</td>
       <td><img src="../Picture/VS2022-Dark-南瓜色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-南瓜色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-南瓜色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>灰色</td>
+      <td>Gray</td>
       <td><img src="../Picture/VS2022-Dark-灰色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-灰色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-灰色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>珊瑚橘</td>
+      <td>Volt</td>
       <td><img src="../Picture/VS2022-Dark-珊瑚橘.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-珊瑚橘.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-珊瑚橘.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>青色</td>
+      <td>Teal</td>
       <td><img src="../Picture/VS2022-Dark-青色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-青色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-青色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>品红</td>
+      <td>Magenta</td>
       <td><img src="../Picture/VS2022-Dark-品红.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-品红.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-品红.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>薄荷绿</td>
+      <td>Mint</td>
       <td><img src="../Picture/VS2022-Dark-薄荷绿.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-薄荷绿.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-薄荷绿.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>深棕色</td>
+      <td>Dark Brown</td>
       <td><img src="../Picture/VS2022-Dark-深棕色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-深棕色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-深棕色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>蓝色</td>
+      <td>Blue</td>
       <td><img src="../Picture/VS2022-Dark-蓝色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-蓝色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-蓝色.png" width="400" height="auto"></td>
    </tr>
    <tr>
-      <td>粉色</td>
+      <td>Pink</td>
       <td><img src="../Picture/VS2022-Dark-粉色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Light-粉色.png" width="400" height="auto"></td>
       <td><img src="../Picture/VS2022-Blue-粉色.png" width="400" height="auto"></td>
@@ -198,9 +200,9 @@ These definitions do not theme all controls used within this library. You should
 
 to also theme standard elements, such as, button and textblock etc.
 
-# 简单使用这个库
+# easy to use for example
 
-1. in nuget,install this package: ML592.AvalonDock.Themes.VS2022
+1. in nuget,install this package: ML592.AvalonDock.Themes.VS2022,include ML592.AvalonDock
 
 2. in App.xaml :
 

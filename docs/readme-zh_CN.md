@@ -1,3 +1,5 @@
+<a href="./readme.md">English</a> -/
+<a>简体中文</a> -
 | Downloads                                                                                                                                               | NuGet Packages
 | :------------------------------------------------------------------------------------------------------------------------------------------------------ | :--------------------------------------------------------------------------------
 | [![NuGet](https://img.shields.io/nuget/dt/Dirkster.AvalonDock.svg)](http://nuget.org/packages/Dirkster.AvalonDock)                                      | [Dirkster.AvalonDock](http://nuget.org/packages/Dirkster.AvalonDock)
@@ -199,7 +201,7 @@
 
 # 简单使用这个库
 
-1. 在nuget中搜索并下载安装如下包: ML592.AvalonDock.Themes.VS2022
+1. 在nuget中搜索并下载安装如下包: ML592.AvalonDock.Themes.VS2022, 依赖于ML592.AvalonDock
 
 2. 在 App.xaml 中添加以下代码:
 
