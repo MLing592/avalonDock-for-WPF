@@ -13,8 +13,6 @@
 
 # Feature: from Visual Studio VS2022 and Higher
 
-# Feature Added - 基于Dirkster.AvalonDock的VS2013主题修改而来的VS2022主题
-
 ### VS2022Test
 
 <table width="100%">
@@ -200,77 +198,79 @@ These definitions do not theme all controls used within this library. You should
 
 to also theme standard elements, such as, button and textblock etc.
 
-# update History
+# 简单使用这个库
 
-## 2023-5-4
+1. in nuget,install this package: ML592.AvalonDock.Themes.VS2022
 
-- 1.新建AvalonDock.Themes.VS2022，修改AvalonDock.Themes.VS2022/BlueBrushs，DarkBrushs，LightBrushs主题部分配色，增加彩色标签等颜色
-- 2.修改AvalonDock.Themes.VS2022/Themes/Generic.xaml下AvalonDockThemeVS2022DocumentPaneControlStyle属性ItemContainerStyle，修改了文档选项卡样式，左侧增加彩色标签
-- 3.修改AvalonDock.Themes.VS2022/Themes/Generic.xaml下AvalonDockThemeVS2022DocumentContextMenu，增加文档右键菜单-"设置选项卡颜色"
-- 4.修改AvalonDock/Controls/LayoutDocumentItem.cs，增加ChangeTabColorCommand命令
+2. in App.xaml :
 
-## 2023-5-8
-
-- 1.修改AvalonDock/Controls/DocumentPaneTabPanel.cs，原版容器为Panel，由一行显示文档，多余隐藏，现在使用WrapPanel作为面板容器，新增对象DocumentPaneTabWrapPanel,兼容其他主题
-- 2.新增AvalonDock/Controls/LayoutDocumentItem.cs，增加ChangeTabColorCommand命令对应方法，寻找资源并统一替换颜色，实现统一更换选项卡颜色
-- 3.重写了AvalonDock/Controls/LayoutDocumentTabItem.cs下OnMouseRightButtonDown方法，使右键LayoutDocument时，LayoutDocument即被选中
-- 4.删除部分无用颜色资源和键
-- 5.鼠标移动到选项卡上时，选项卡成为孤岛，左右上下皆隔开，选项卡不再直角，改为圆角
-
-## 2023-5-9
-
-- 1.修正部分颜色,例如"选项卡颜色-无"
-- 2.窗口等修改为半圆角
-- 3.预计，文档添加固定图标和固定功能
-
-## 2023-5-13
-
-- 1.浮动窗口添加最小化,最大化后不显示最小化，因为发现此时点击出现最小化未完成立即回到最大化
-- 2.浮动窗口圆角，增加新增元素主题配色
-- 3.文档添加锚定按钮,LayoutDocument添加IsFixed属性，LayoutDocumentItem添加FixCommand命令
-- 4.顶部彩色标签容器修改自定义Panel，重写MeasureOverride和ArrangeOverride
-- 5.修正原先已存在不合理之处：文档选项卡选中被激活，选中其他窗口，再次返回选中文档内容框(非选项卡),此时自动激活选中第一项而非原选中项。content不可为null，否则无效
-- 5.1.逻辑：先触发newDocument的isActive，再触发oldDocument的isActive，切换ActiveContent，入口点在LayoutContent的IsActive属性set
-- 5.2.修改了LayoutRoot的InternalSetActiveContent方法，原本当从Docuemnt切换到工具窗口时，LastFocusedDocument被清空导致返回Document时默认第一个Document被激活，现在保留
-- 5.3.修改了LayoutRoot的CompareTo，测试时发现随意写的content与原先默认创建的fileviewmodel，无法比较，遂加上一个判断 other.Content is IComparable
-- 6.修改逻辑，固定文档被添加到固定文档队列末尾
-- 7.预计添加固定文档与未固定文档永远分离，不可破坏
-
-## 2023-5-16
-
-- 1.修复Anchorable等其他控件到DocumentPane时的测量排列排序固定问题
-- 2.Anchorable添加iSFixed属性
-- 3.Anchorable强制固定，固定时与Document分行
-
-
-## 2023-5-31
-
-- 1.合并akastudio项目
-- 2.修改部分颜色
-- 3.待解决：序列化和反序列化布局添加新增信息
-
-## 2023-6-5
-
-- 1.解决反序列化IsFixed问题：
-- 1.1 反序列化时读取xaml文件加载的对应contentId的对象，拿到属性，不应该拿到isFixed等属性。
-- 1.2 若布局以xaml文件为准，则在LayoutSerializer.FixupLayout()方法中，则取消注释以下代码，默认以反序列化文件为准，即注释以下代码
-
-```C#
-   //lcToFix.IsFixed = previousDocument.IsFixed;
-   //lcToFix.IsFixed = previousAchorable.IsFixed;
+ ```XAML
+     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/AvalonDock.Themes.VS2022;component/DarkBrushs.xaml" />
+                <ResourceDictionary Source="/AvalonDock.Themes.VS2022;component/LightBrushs.xaml" />
+                <ResourceDictionary Source="/AvalonDock.Themes.VS2022;component/BlueBrushs.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 ```
 
+1. in MainWindow.xaml ：
 
-
-## 2023-6-5
-
-- 1.解决反序列化IsFixed问题：
-- 1.1 反序列化时读取xaml文件加载的对应contentId的对象，拿到属性，不应该拿到isFixed等属性。
-- 1.2 若布局以xaml文件为准，则在LayoutSerializer.FixupLayout()方法中，则取消注释以下代码，默认以反序列化文件为准，即注释以下代码
-
-```C#
-   //lcToFix.IsFixed = previousDocument.IsFixed;
-   //lcToFix.IsFixed = previousAchorable.IsFixed;
 ```
+    <Grid>
+        <DockingManager>
+            <DockingManager.Theme>
+                <VS2022DarkTheme />
+            </DockingManager.Theme>
+            <LayoutRoot>
+                <LayoutPanel Orientation="Horizontal">
+                    <LayoutPanel Orientation="Vertical">
+                        <LayoutDocumentPane>
+                            <LayoutDocument Title="doc1.css" Content="123" ContentId="doc1" />
+                            <LayoutDocument Title="doc2.css" Content="123" ContentId="doc2" />
+                            <LayoutDocument Title="doc3.css" ContentId="doc3" />
+                            <LayoutDocument Title="doc4.css" ContentId="doc4" />
+                            <LayoutDocument Title="doc5.css" ContentId="doc5" />
+                            <LayoutDocument Title="doc6.css" ContentId="doc6" />
+                            <LayoutDocument Title="doc7.css" ContentId="doc7" />
+                            <LayoutDocument Title="doc8.css" ContentId="doc8" />
+                            <LayoutDocument Title="doc9.css" ContentId="doc9" />
+                            <LayoutDocument Title="doc10.css" ContentId="doc10" />
+                            <LayoutDocument Title="doc11.css" ContentId="doc11" />
+                            <LayoutDocument Title="doc12.css" ContentId="doc12" />
+                            <LayoutDocument Title="doc13.css" ContentId="doc13" />
+                            <LayoutDocument Title="doc14.css" ContentId="doc14" />
+                            <LayoutDocument Title="doc15.css" ContentId="doc15" />
+                            <LayoutDocument Title="doc16.css" ContentId="doc16" />
+                            <LayoutDocument Title="doc17.css" ContentId="doc17" />
+                            <LayoutDocument Title="doc18.css" ContentId="doc18" />
+                            <LayoutDocument Title="doc19.css" ContentId="doc19" />
+                            <LayoutDocument Title="doc20.css" ContentId="doc20" />
+                            <LayoutDocument Title="doc21.css" ContentId="doc21" />
+                            <LayoutDocument Title="doc22.css" ContentId="doc22" />
+                            <LayoutDocument Title="doc23.css" ContentId="doc23" />
+                            <LayoutDocument Title="doc24.css" ContentId="doc24" />
+                            <LayoutDocument Title="doc25.css" Content="doc25" ContentId="doc25" />
+                        </LayoutDocumentPane>
+
+                        <LayoutAnchorablePaneGroup DockHeight="128" Orientation="Horizontal">
+                            <LayoutAnchorablePane Name="ErrorsPane" />
+                            <LayoutAnchorablePane Name="OutputPane" />
+                        </LayoutAnchorablePaneGroup>
+                    </LayoutPanel>
+
+                    <LayoutAnchorablePaneGroup DockWidth="256" Orientation="Vertical">
+                        <LayoutAnchorablePane Name="ExplorerPane" DockHeight="2*" />
+                        <LayoutAnchorablePane Name="PropertiesPane" />
+                    </LayoutAnchorablePaneGroup>
+                </LayoutPanel>
+            </LayoutRoot>
+        </DockingManager>
+    </Grid>
+```
+
+4.Thanks,usage the same as [Dikster99 AvalonDock 4.72.0](https://github.com/Dirkster99/AvalonDock/tree/v4.72.0).
 
 
