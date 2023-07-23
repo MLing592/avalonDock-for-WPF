@@ -6,10 +6,8 @@
 | [![NuGet](https://img.shields.io/nuget/dt/Dirkster.AvalonDock.Themes.Metro.svg)](http://nuget.org/packages/Dirkster.AvalonDock.Themes.Metro)            | [Dirkster.AvalonDock.Themes.Metro](http://nuget.org/packages/Dirkster.AvalonDock.Themes.Metro)
 | [![NuGet](https://img.shields.io/nuget/dt/Dirkster.AvalonDock.Themes.VS2010.svg)](http://nuget.org/packages/Dirkster.AvalonDock.Themes.VS2010)          | [Dirkster.AvalonDock.Themes.VS2010](http://nuget.org/packages/Dirkster.AvalonDock.Themes.VS2010)
 | [![NuGet](https://img.shields.io/nuget/dt/Dirkster.AvalonDock.Themes.VS2013.svg)](http://nuget.org/packages/Dirkster.AvalonDock.Themes.VS2013)          | [Dirkster.AvalonDock.Themes.VS2013](http://nuget.org/packages/Dirkster.AvalonDock.Themes.VS2013) (see [Wiki](https://github.com/Dirkster99/AvalonDock/wiki/WPF-VS-2013-Dark-Light-Demo-Client) )
-| [![NuGet](https://img.shields.io/nuget/dt/Dirkster.AvalonDock.Themes.VS2012.svg)](http://nuget.org/packages/Dirkster.AvalonDock.Themes.VS2013)          | [Dirkster.AvalonDock.Themes.VS2013](http://nuget.org/packages/Dirkster.AvalonDock.Themes.VS2013) (see [Wiki](https://github.com/Dirkster99/AvalonDock/wiki/WPF-VS-2013-Dark-Light-Demo-Client) )
-
-![Net4](https://badgen.net/badge/Framework/.Net&nbsp;4.8/blue) ![NetCore3](https://badgen.net/badge/Framework/NetCore&nbsp;3.0/green) ![Net4](https://badgen.net/badge/Framework/.NET&nbsp;5/orange)
-
+| [![NuGet](https://img.shields.io/nuget/dt/ML592.AvalonDock.Themes.VS2022.svg)](https://www.nuget.org/packages/ML592.AvalonDock.Themes.VS2022)          | [ML592.AvalonDock.Themes.VS2022](https://www.nuget.org/packages/ML592.AvalonDock.Themes.VS2022)
+![Net4](https://badgen.net/badge/Framework/.Net&nbsp;4/blue) ![NetCore3](https://badgen.net/badge/Framework/NetCore&nbsp;3/blue) ![Net4](https://badgen.net/badge/Framework/.NET&nbsp;5/blue)
 
 # Feature: from Visual Studio VS2022 and Higher
 
@@ -22,15 +20,15 @@
    </tr>
    <tr>
       <td>Dark</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/VS2022-Dark.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/VS2022-Dark.png" width="400"></td>
    </tr>
    <tr>
       <td>Light</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/VS2022-Light.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/VS2022-Light.png" width="400"></td>
    </tr>
    <tr>
       <td>Blue</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/VS2022-Blue.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/VS2022-Blue.png" width="400"></td>
    </tr>
 </table>
 
@@ -43,15 +41,15 @@
    </tr>
    <tr>
       <td>Dark</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/AkaStudio-2022-Dark.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/development/AkaStudio-2022-Dark.png" width="400"></td>
    </tr>
    <tr>
       <td>Light</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/AkaStudio-2022-Light.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/development/AkaStudio-2022-Light.png" width="400"></td>
    </tr>
    <tr>
       <td>Blue</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/AkaStudio-2022-Blue.png" width="400"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/development/AkaStudio-2022-Blue.png" width="400"></td>
    </tr>
 </table>
 
@@ -66,105 +64,105 @@
    </tr>
    <tr>
       <td>无</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-无.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-无.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-无.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-无.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-无.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-无.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>淡紫色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-淡紫色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-淡紫色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-淡紫色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-淡紫色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-淡紫色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-淡紫色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>金色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-金色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-金色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-金色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-金色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-金色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-金色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>蓝绿色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-蓝绿色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-蓝绿色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-蓝绿色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-蓝绿色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-蓝绿色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-蓝绿色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>绛紫色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-绛紫色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-绛紫色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-绛紫色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-绛紫色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-绛紫色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-绛紫色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>绿色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-绿色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-绿色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-绿色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-绿色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-绿色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-绿色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>棕色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-棕色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-棕色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-棕色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-棕色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-棕色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-棕色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>亮蓝色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-亮蓝色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-亮蓝色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-亮蓝色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-亮蓝色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-亮蓝色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-亮蓝色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>南瓜色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-南瓜色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-南瓜色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-南瓜色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-南瓜色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-南瓜色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-南瓜色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>灰色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-灰色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-灰色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-灰色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-灰色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-灰色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-灰色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>珊瑚橘</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-珊瑚橘.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-珊瑚橘.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-珊瑚橘.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-珊瑚橘.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-珊瑚橘.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-珊瑚橘.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>青色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-青色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-青色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-青色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-青色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-青色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-青色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>品红</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-品红.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-品红.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-品红.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-品红.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-品红.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-品红.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>薄荷绿</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-薄荷绿.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-薄荷绿.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-薄荷绿.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-薄荷绿.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-薄荷绿.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-薄荷绿.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>深棕色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-深棕色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-深棕色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-深棕色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-深棕色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-深棕色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-深棕色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>蓝色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-蓝色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-蓝色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-蓝色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-蓝色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-蓝色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-蓝色.png" width="400" height="auto"></td>
    </tr>
    <tr>
       <td>粉色</td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Dark-粉色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Light-粉色.png" width="400" height="auto"></td>
-      <td><img src="https://github.com/NewRman/avalonDock-for-WPF/blob/54c76002cdfd2e327e77a697f55ea6545359bbfb/source/Picture/VS2022-Blue-粉色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Dark-粉色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Light-粉色.png" width="400" height="auto"></td>
+      <td><img src="https://gitee.com/liu_meiling/avalon-dock-for-wpf/raw/master/source/Picture/VS2022-Blue-粉色.png" width="400" height="auto"></td>
    </tr>
 </table>
 
