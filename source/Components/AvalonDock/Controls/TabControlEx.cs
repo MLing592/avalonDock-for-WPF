@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Data;
+using System.Windows.Input;
 
 namespace AvalonDock.Controls
 {
@@ -265,6 +266,16 @@ namespace AvalonDock.Controls
 			}
 
 			return null;
+		}
+
+		protected override void OnKeyDown(KeyEventArgs e)
+		{
+			//base.OnKeyDown(e);
+		}
+
+		protected override void OnPreviewKeyDown(KeyEventArgs e)
+		{
+			//base.OnPreviewKeyDown(e);
 		}
 
 		#endregion methods
