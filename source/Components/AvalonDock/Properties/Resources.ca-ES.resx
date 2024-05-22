@@ -159,6 +159,21 @@
   <data name="Document_Close" xml:space="preserve">
     <value>Tancar</value>
   </data>
+	<data name="Document_CloseLeft" xml:space="preserve">
+    <value>Tancar pestanya esquerra</value>
+  </data>
+	<data name="Document_CloseLeftExceptFixed" xml:space="preserve">
+    <value>Tancar pestanyes esquerres excepte les fixes</value>
+  </data>
+	<data name="Document_CloseRight" xml:space="preserve">
+    <value>Tancar pestanya dreta</value>
+  </data>
+	<data name="Document_CloseRightExceptFixed" xml:space="preserve">
+    <value>Tancar pestanyes dretes excepte les fixes</value>
+  </data>
+	<data name="Document_CloseExceptFixed" xml:space="preserve">
+    <value>Tancar-ho tot excepte els elements fixos</value>
+  </data>
   <data name="Document_CloseAll" xml:space="preserve">
     <value>Tancar-ho tot</value>
   </data>

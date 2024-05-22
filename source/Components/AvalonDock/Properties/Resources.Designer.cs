@@ -205,6 +205,51 @@ namespace AvalonDock.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Close All But Fixed 的本地化字符串。
+        /// </summary>
+        public static string Document_CloseExceptFixed {
+            get {
+                return ResourceManager.GetString("Document_CloseExceptFixed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Close On Left 的本地化字符串。
+        /// </summary>
+        public static string Document_CloseLeft {
+            get {
+                return ResourceManager.GetString("Document_CloseLeft", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Close On Left But Fixed 的本地化字符串。
+        /// </summary>
+        public static string Document_CloseLeftExceptFixed {
+            get {
+                return ResourceManager.GetString("Document_CloseLeftExceptFixed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Close On Right 的本地化字符串。
+        /// </summary>
+        public static string Document_CloseRight {
+            get {
+                return ResourceManager.GetString("Document_CloseRight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Close On Right But Fixed 的本地化字符串。
+        /// </summary>
+        public static string Document_CloseRightExceptFixed {
+            get {
+                return ResourceManager.GetString("Document_CloseRightExceptFixed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Window Position 的本地化字符串。
         /// </summary>
         public static string Document_CxMenu_Hint {

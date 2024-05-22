@@ -1989,6 +1989,69 @@ namespace AvalonDock
 			}
 		}
 
+		internal void ExecuteCloseLeftCommand(LayoutContent contentSelected)
+		{
+			var pane = contentSelected.FindParent<LayoutDocumentPane>();
+			int index = pane.IndexOfChild(contentSelected);
+			var list = Layout
+				.Descendents()
+				.OfType<LayoutContent>()
+				.Where(d => pane.IndexOfChild(d) < index && d.Parent is LayoutDocumentPane);
+
+			foreach (var contentToClose in list.ToArray())
+				Close(contentToClose);
+		}
+
+		internal void ExecuteCloseLeftExceptFixedCommand(LayoutContent contentSelected)
+		{
+			var pane = contentSelected.FindParent<LayoutDocumentPane>();
+			int index = pane.IndexOfChild(contentSelected);
+			var list = Layout
+				.Descendents()
+				.OfType<LayoutContent>()
+				.Where(d => pane.IndexOfChild(d) < index && d.Parent is LayoutDocumentPane && !(d as LayoutDocument).IsFixed);
+
+			foreach (var contentToClose in list.ToArray())
+				Close(contentToClose);
+		}
+
+		internal void ExecuteCloseRightCommand(LayoutContent contentSelected)
+		{
+			var pane = contentSelected.FindParent<LayoutDocumentPane>();
+			int index = pane.IndexOfChild(contentSelected);
+			var list = Layout
+				.Descendents()
+				.OfType<LayoutContent>()
+				.Where(d => pane.IndexOfChild(d) > index && d.Parent is LayoutDocumentPane);
+
+			foreach (var contentToClose in list.ToArray())
+				Close(contentToClose);
+		}
+
+		internal void ExecuteCloseRightExceptFixedCommand(LayoutContent contentSelected)
+		{
+			var pane = contentSelected.FindParent<LayoutDocumentPane>();
+			int index = pane.IndexOfChild(contentSelected);
+			var list = Layout
+				.Descendents()
+				.OfType<LayoutContent>()
+				.Where(d => pane.IndexOfChild(d) > index && d.Parent is LayoutDocumentPane && !(d as LayoutDocument).IsFixed);
+
+			foreach (var contentToClose in list.ToArray())
+				Close(contentToClose);
+		}
+
+		internal void ExecuteCloseExceptFixedCommand(LayoutContent contentSelected)
+		{
+			foreach (var contentToClose in Layout
+				.Descendents()
+				.OfType<LayoutContent>()
+				.Where(d => d.Parent is LayoutDocumentPane && !(d as LayoutDocument).IsFixed) 
+				.ToArray())
+
+				Close(contentToClose);
+		}
+
 		internal void ExecuteHideCommand(LayoutAnchorable anchorable)
 		{
 			if (!(anchorable is LayoutAnchorable model)) return;

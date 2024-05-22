@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -159,7 +159,22 @@
   <data name="Document_Close" xml:space="preserve">
     <value>Close</value>
   </data>
-  <data name="Document_CloseAll" xml:space="preserve">
+	<data name="Document_CloseLeft" xml:space="preserve">
+    <value>Close On Left</value>
+  </data>
+	<data name="Document_CloseLeftExceptFixed" xml:space="preserve">
+    <value>Close On Left But Fixed</value>
+  </data>
+	<data name="Document_CloseRight" xml:space="preserve">
+    <value>Close On Right</value>
+  </data>
+	<data name="Document_CloseRightExceptFixed" xml:space="preserve">
+    <value>Close On Right But Fixed</value>
+  </data>
+	<data name="Document_CloseExceptFixed" xml:space="preserve">
+    <value>Close All But Fixed</value>
+  </data>
+	<data name="Document_CloseAll" xml:space="preserve">
     <value>Close All</value>
   </data>
   <data name="Document_CloseAllButThis" xml:space="preserve">

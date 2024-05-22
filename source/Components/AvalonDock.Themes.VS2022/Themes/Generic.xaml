@@ -1396,7 +1396,12 @@
             Command="{Binding Path=CloseCommand}"
             Header="{x:Static avalonDockProperties:Resources.Document_Close}"
             Visibility="{Binding Path=IsEnabled, RelativeSource={RelativeSource Self}, Mode=OneWay, Converter={avalonDockConverters:BoolToVisibilityConverter}}" />
-        <MenuItem Command="{Binding Path=CloseAllButThisCommand}" Header="{x:Static avalonDockProperties:Resources.Document_CloseAllButThis}" />
+		<MenuItem Command="{Binding Path=CloseLeftCommand}" Header="{x:Static avalonDockProperties:Resources.Document_CloseLeft}" />
+		<MenuItem Command="{Binding Path=CloseLeftExceptFixedCommand}" Header="{x:Static avalonDockProperties:Resources.Document_CloseLeftExceptFixed}" />
+		<MenuItem Command="{Binding Path=CloseRightCommand}" Header="{x:Static avalonDockProperties:Resources.Document_CloseRight}" />
+		<!--<MenuItem Command="{Binding Path=CloseRightExceptFixedCommand}" Header="{x:Static avalonDockProperties:Resources.Document_CloseRightExceptFixed}" />-->
+		<MenuItem Command="{Binding Path=CloseExceptFixedCommand}" Header="{x:Static avalonDockProperties:Resources.Document_CloseExceptFixed}" />
+		<MenuItem Command="{Binding Path=CloseAllButThisCommand}" Header="{x:Static avalonDockProperties:Resources.Document_CloseAllButThis}" />
         <MenuItem Command="{Binding Path=CloseAllCommand}" Header="{x:Static avalonDockProperties:Resources.Document_CloseAll}" />
         <MenuItem Command="{Binding Path=FloatCommand}" Header="{x:Static avalonDockProperties:Resources.Document_Float}" />
         <MenuItem Command="{Binding Path=DockAsDocumentCommand}" Header="{x:Static avalonDockProperties:Resources.Document_DockAsDocument}" />
