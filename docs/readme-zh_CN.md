@@ -12,6 +12,7 @@
 
 ![Net4](https://badgen.net/badge/Framework/.Net&nbsp;4.8/blue) ![NetCore3](https://badgen.net/badge/NetCore/NetCore&nbsp;3.0/yellow) ![Net4](https://badgen.net/badge/NetCore/.NET&nbsp;5.0/orange)
 
+# 提示：这个仓库不再更新，仅作为存档使用, 后续更新请查看我的另一仓库，目前已更新2022PreView Theme https://github.com/MLing592/AvalonDock
 
 # 功能：相较于原版增加了VS2022主题，文档标签支持了固定，自适应流式换行，换色...
 

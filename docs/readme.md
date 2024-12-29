@@ -12,6 +12,7 @@
 
 ![Net4](https://badgen.net/badge/Framework/.Net&nbsp;4.8/blue) ![NetCore3](https://badgen.net/badge/NetCore/NetCore&nbsp;3.0/yellow) ![Net4](https://badgen.net/badge/NetCore/.NET&nbsp;5.0/orange)
 
+# Thanks：This branch is no longer updated, please see https://github.com/MLing592/AvalonDock
 
 # Feature: from Visual Studio VS2022 and Higher
 
